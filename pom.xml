@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>es.upm.oeg.epnoi</groupId>
-    <artifactId>epnoi-matching-algorithms</artifactId>
+    <artifactId>epnoi-matching-metrics</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>jar</packaging>
@@ -19,6 +19,7 @@
         <maven.jar.version>2.5</maven.jar.version>
         <maven.scala.version>2.15.2</maven.scala.version>
         <maven.site.version>0.10</maven.site.version>
+        <pdfbox.version>1.8.9</pdfbox.version>
         <scala.version>2.11.6</scala.version>
         <spark.version>1.3.0</spark.version>
     </properties>
@@ -74,7 +75,7 @@
                     <branch>refs/heads/mvn-repo</branch>
                     <includes><include>**/*</include></includes>
                     <merge>true</merge>
-                    <repositoryName>epnoi-matching-algorithms</repositoryName>
+                    <repositoryName>epnoi-matching-metrics</repositoryName>
                     <repositoryOwner>cabadol</repositoryOwner>
                     <server>github</server>
                 </configuration>
@@ -126,6 +127,13 @@
             <groupId>org.apache.mahout</groupId>
             <artifactId>mahout-integration</artifactId>
             <version>${mahout.version}</version>
+        </dependency>
+        <!-- Apache PDF to Text Converter -->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>${pdfbox.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

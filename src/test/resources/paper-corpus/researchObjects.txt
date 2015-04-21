@@ -1,0 +1,332 @@
+ Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+1877-0428 © 2014 The Authors. Published by Elsevier Ltd. Open access under CC BY-NC-ND license. 
+Selection and peer-review under responsibility of the IPMA.
+doi: 10.1016/j.sbspro.2014.03.028 
+ScienceDirect
+27th IPMA World Congress 
+Construction Projects as research objects – different research 
+approaches and possibilities  
+Naaranoja, M. a, Kähkönen, K.b* and Keinänen, M. b  
+bVaasa University, Wolffintie 34, Vaasa, 65101, Finland
+aTampere University of Technology, Korkeakoulunkatu 5, Tampere, 33101, Finland 
+Abstract 
+Research as an activity can mean wide variety of different approaches and their dimensions. Researchers can act as rather 
+passive observers and analyzers by having the current working practices as their research objects. The action research efforts 
+are the ultimate other end. In such efforts researchers act as active change makers by implementing novel trials such as new 
+working practices and their tools. Such trials can fail or be successful but nevertheless the targeted research data is collected as 
+an evidence of the completed effort. Such failures are a real threat for companies and their projects involved in this kind of 
+research. However, more risky action research can be a source for new kind of benefits and competitiveness compared with the 
+more traditional, and wider used, passive observational research. In particular, a sound action research strategy can combine 
+research and development, can speed up targeted changes and can actually mitigate the overall risk of change making. This 
+paper presents a framework of project research strategy and method selection where attention is on degrees of different 
+alternatives and their characteristics. The construction projects and their management represent the industrial context of this 
+paper. 
+© 2014 The Authors. Published by Elsevier Ltd. 
+Selection and peer-review under responsibility of the IPMA. 
+Keywords: pilot projects; construction; research methods; action research; university campus development 
+* Corresponding author. Tel.: +358-40-198 1270 
+E-mail address:kalle.e.kahkonen@tut.fi 
+Available online at www.sciencedirect.com
+  e t rs. Published by Elsevier Ltd. Open access under CC BY-NC-ND license. 
+  r-revie  under responsibility of the IPMA.
+238   M. Naaranoja et al. /  Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+1. Introduction 
+The project and particularly project management paradigm, its different appearances, development and resultant 
+effects in industries and communities have provided fruitful sources for research that is of interest both to the 
+academia and different lines of businesses. At the moment we can recognise the presence international project 
+research community and its continuous development. The characteristics and nature of research itself within this 
+community have also been objects of different analyzes and relating papers. Views from those are presented on the 
+following.  
+Shenhar and Dvir (2007) have analyzed the development of project management research and the fundamental 
+research viewpoints that seems to be present in the current research efforts.  In general, the overall view of the 
+project management research is rather heterogeneous and multi-disciplinary. Compared with several other well-
+established research disciplines project management is still lacking theoretical basis and a guiding set of concepts.   
+Artto & Kujala (2008) have studied different themes of research that have appeared in journal papers. This work is 
+showing that the research challenges start from single projects and end up in the management of business networks 
+where the projects form companies’ operative core. Blomquist et al (2010) have recognised that research on 
+projects is a rather immature field and it seems to be insubstantial regarding to understanding what occurs in 
+projects. They see need for project-as-practice research approach where the main focus is on things that are 
+actually done in contemporary organizations. Cicmil (2006) is demonstrating in her paper how carefully designed 
+and completed qualitative research can produce new kind of understanding over what goes on in projects and their 
+management. Kwak and Anbari (2008) have recognised the increasing number of project research papers that are 
+published in the leading management journals. This seems to be evidence that project management will step by 
+step reach the status of an academic discipline.  
+The applications for research perspectives in project based research are diverse (Bredillet 2011). Majority of 
+applied research methods and techniques have their origins in social sciences. However, several authors have 
+recognised how complex is the world of projects and their management. This must be taken closer into account in 
+research efforts and avoid anchoring the thinking in too narrow assumptions or in an inappropriate theoretical 
+basis. Compared with traditional research approached where the main empirical focus is often on rather passive 
+observations this paper has its focus on the possible contributions of different scientific approaches used in 
+research efforts where the researchers act as change makers. This can be also categorised as a type of action 
+research where a certain change is tried to be implemented and research data is then gathered from this experiment.  
+2. Research paradigms for project studies 
+2.1 General research paradigms 
+The term ‘paradigm’ is used to describe the ultimate framework within which a peace of research is located. 
+Kuhn (1962) defines scientific paradigm as: "universally recognized scientific achievements that, for a time, 
+provide model problems and solutions for a community of researchers”, for example, 
+• what is to be observed and scrutinized 
+• the kind of questions that are supposed to be asked and probed for answers in relation to this subject 
+• how these questions are to be structured 
+• how the results of scientific investigations should be interpreted 
+• how is an experiment to be conducted, and what equipment is available to conduct the experiment. 
+The paradigm can so describe the beliefs of the scientific discipline and the way of finding and proving the 
+scientific contributions of the research. Regardless of paradigmatic orientation, all research in project management 
+represents an attempt to provide warranted assertions about projects and their management.  
+239 M. Naaranoja et al. /  Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+The research projects begin with defining the purpose and aims. In different fields one can recognize at least 
+four main paradigms to study empirical world (1) positivism/post positivism, (2) advocacy/participatory, (3) 
+contructivism, and (4) pragmatism (Fig. 1). The various paradigms have different kind of aims and mainly use 
+different methods to find the empirical or other findings that the research efforts can produce.  
+Fig. 1. The four research paradigms. (Creswell et al., 2003; MacKenzie and Knipe, 2006) 
+Postpositivist research paradigm uses mainly quantitative methods and the aim is to create knowledge discovery 
+and verification through direct observations or measurements of phenomena independent of the researchers 
+(Creswell et al., 2003; MacKenzie and Knipe, 2006). The research that uses this paradigm aims to observe, make 
+questionnaires and process the data in an objective way, independent from the researchers’ subjective 
+interpretations.  
+The constructivist research paradigm uses mainly qualitative methods but the use of quantitative methods is also 
+possible. Constructive research material and new knowledge is established through the meanings attached to the 
+phenomena studied, researchers interact with the subjects of study to obtain data, the inquiry changes both the 
+researcher and the subject and knowledge is context- and time dependent. (Creswell et al., 2003; MacKenzie and 
+Knipe, 2006). 
+Constructivists often aim to create new theories that need to be tested with another approach. According to 
+constructionist the interpretation of the situation might be different by different people and the 3mancipator33n of 
+the results is not always important since the solutions are always case sensitive. (Creswell, 2003; MacKenzie and 
+Knipe, 2006). 
+The research methods of constructive research can so be interviews, also the quantitative survey is possible. The 
+main issue is that the building of the new method is done in collaboration with the researcher and the other 
+stakeholders and the understanding of the pilot study is got in collaboration with the other stakeholders.  
+The advocacy/participatory research paradigm uses both quantitative and qualitative research methods. There 
+are also various methods that can be used in the collection of data (Creswell, 2003; MacKenzie and Knipe, 2006). 
+The advocacy/partisipatory research aims to activate the stakeholders in innovations. An example of this kind of 
+research is a Soft GIS inquiry about the needs of the the overall aim is to activate the participants in the 
+development of the environment. So the end result of construction project research could be for example a town 
+planning research project that finds out the different viewpoints of the stakeholders and uses theoretical views to 
+explain why the viewpoints are important. 
+The pragmatic paradigm uses real case studies as problem analysis.  Quantitative and/or qualitative research 
+methods are used. The research material collection methods used are similar to those used in connection with the 
+240   M. Naaranoja et al. /  Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+postpositivist and constructivist paradigms. These methods include for example interviews, observation and 
+different kinds of tests (Creswell et al., 2003; MacKenzie and Knipe, 2006). 
+The research strategy may, for example, be action-analytical. This research may study the current practices and 
+aims to improve the practices. The research philosophy of action-analytical research strategy is hermeneutics, in 
+which the aim is to understand the research problem. Typical for this strategy is that there are no external, neutral 
+observations of the research subject that could be measured. The research subject is examined in the light of 
+history, practices and theory (Fig. 2). Also the close connection of the researcher and the subject is typical for this 
+research strategy, though the tightness of connection varies (Olkkonen 1993). 
+According to Stringer (1999) in action research the researcher often aims to solve a problem with the 
+practitioners. Action research is situational, collaborative and participative way of working, and self evaluative. In 
+action research the researcher can select different approaches to study the intervention (Grudy 1983):  
+1. technical approach – test the theories with real life pilots 
+2. pragmatic approach – understand how things are in the pilots are and generate new theories 
+3. empowering approach – action research is 4mancipator, it leads not just to new practical knowledge, but 
+to new abilities to create knowledge. 
+Fig. 2. View of the research subject according to action-analytical research strategy (Olkkonen 1993: 56). 
+Although there are many important paradigmatic differences between e.g. qualitative and quantitative, there are 
+some similarities between the various approaches. According to Sechrest and Sidani (1995, p. 78) both 
+methodologies “describe their data, construct explanatory arguments from their data, and speculate about why the 
+outcomes they observed happened as they did.” Additionally, both sets of researchers ensure that their inquiries 
+have minimum confirmation bias and other sources of invalidity (or lack of trustworthiness) that have the potential 
+to exist in every research study (Sandelowski, 1986). 
+2.2 Construction project as a research object 
+In project management profession like in the construction industry the research is close to the industry practices 
+and often the projects themselves are the most interesting research objects. The projects might be just observed not 
+ZĞƐĞĂƌĐŚ
+ƐƵďũĞĐƚdŚĞŽƌǇ
+,ŝƐƚŽƌǇ
+WƌĂĐƚŝĐĞ
+'ŽĂůƐ
+241 M. Naaranoja et al. /  Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+trying to change anything or the experiments with interventions can be in place (Fig. 3). The interventions can be 
+either co-created with the industry or the researchers test new methods in practice (pilot project). The testing can 
+be planned to be only temporary (pop-up demo) or they can be permanent (demo). The aim of the research project 
+may be to show objectively the benefits of the tested method. The objectivity can be seen in the test arrangements.  
+Pilot project research can have participatory approach if for example a new project management methods needs 
+to be developed. The new method can be developed in collaboration with the construction project participants. This 
+kind of research is valuable the different viewpoints can be learned as constructing the new management system. 
+This can be classified as a type of pilot project approaches. The observations and interviews or surveys might not 
+aim to change the current practice but aim to test the theories (post positivism) or it can be pragmatic oriented by 
+aiming at analyzing real life problems. This pragmatism approach can look for example how projects are managed 
+currently and how management could be better or look for current benefits and challenges and so improve the 
+understanding of the state of the art. 
+. 
+  
+Fig. 3. Different research approaches for studying construction projects 
+3. Various approaches for research with interventions 
+3.1 Selection of research approach 
+When you are aware of the research paradigm to be used and the study questions have been established you can 
+choose the research approach.  Usually the first selection is made between quantitative or qualitative research 
+methods.  
+Quantitative methods include measuring data or making questionnaires of a sample and studying the gathered 
+data by using statistical methods. The method is powerful in proving whether the theories are true or not. For 
+example, if the pilot building according to the measured data is as energy efficient as the theoretical calculations 
+show we have strong evidence that the calculation method is near to correct. However, it cannot tell any detail 
+information. In order to get more detailed information we have to make more detailed measurements. 
+Also the end-user behavior can be followed a long time in several locations and if the end-user behavior can be 
+ĂƐĞƉƌŽũĞĐƚ
+ŽŶƐƚƌƵĐƚŝŽŶƉƌŽũĞĐƚ ĂƐĂƌĞƐĞĂƌĐŚ ŽďũĞĐƚ
+WĂƐƐŝǀĞŽďƐĞƌǀĂƚŝŽŶĂů
+ƌĞƐĞĂƌĐŚ ĐƚŝǀĞ ŽďƐĞƌǀĂƚŝŽŶĂů ƌĞƐĞĂƌĐŚ
+WŝůŽƚ
+ƉƌŽũĞĐƚ
+ĞŵŽ
+ƉƌŽũĞĐƚ WŽƉͲƵƉ^ƚĂƚĞŽĨƚŚĞĂƌƚ
+>ŽŐŝĐ ŽĨĐƵƌƌĞŶƚ ƉƌĂĐƚŝĐĞ͕
+ĞŵĞƌŐŝŶŐ ŶĞǁĨĞĂƚƵƌĞƐ
+dƌŝĂůƐ ŽĨŶĞǁĐŽŶĐĞƉƚƐ͕ ƚŽŽůƐ͕ŽƌŐĂŶŝǌĂƚŝŽŶĂů
+ƐƚƌƵĐƚƵƌĞƐ Žƌ ĚĞŵŽŶƐƚƌĂƚŝŽŶĂů ƉƌŽƚŽƚǇƉĞƐ
+242   M. Naaranoja et al. /  Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+shown to have a pattern the proof that the end-users behave in a certain way can be proved. However, the test 
+arrangements need to be carefully planned in order to get the information of the reason for different behavior 
+patterns. One can also make a survey of the experiences of the pilot project users and analyse the statistically.     
+Bogdan and Taylor (1975: ix) wrote about qualitative methods: “Over the past decade, there has been growing 
+interest in the subjective, in meaning, and in commonsense understanding… The questions that the new 
+approaches raise require methods that are descriptive and holistic. We call these qualitative methods”. Still 
+nowadays the reasons for using qualitative method are the same.  
+The most often used qualitative methods are interview and action research -  the latter is often called 
+constructive research in engineering studies. The interviews can be either theme or more structured. However the 
+analysis of the interviews can be done either statistically (i.e. in quanttative terms) or in qualitative manner.  
+Action research can be seen as a research activity with an intervation. Thus is includes the viewpoint to impact 
+on one way or another on the research object; i.e. the researcher is making an intervention over or within the used 
+practices. Typically, interventions are made in co-operation with the people participating in the research (Eskola 
+and Suoranta 1998). The aim is often to develop and test new ways of carrying out particular tasks.  
+3.2 Different research set-ups for action research in projects 
+Pilot projects are a common way for companies to test a new idea in live situation. In addition to that, a pilot 
+project can act also as a show case for industrial implementation of new processes or relating tools. Research 
+activities can address these pilot projects to test, analyze and develop new practices. More broadly, three different 
+research set-ups for action research can be indentified for testing new concepts and for gathering empirical 
+research data. These research set-ups differ from one another by their duration and scale (Table 1). 
+Table 1. Different research set-ups for action research 
+Type Scale Duration 
+Pilot project complete construction project project life-cycle 
+Demonstration project phase of the project a few months 
+Pop-up project specific project task or part of end results from a few days to one month 
+A pilot project is a project which is designed as a test or trial to demonstrate the effectiveness of a full construction 
+project. A pilot project can last over the complete life-cycle of such project. Normally, in a construction project, it 
+takes time from several months to a few years. A proper pilot project can provide a platform for the researchers to 
+test new ideas and practices. This kind of effort can show evidence of the added value and reveal deficiencies 
+before those ideas and practices are actually implemented. It provides an opportunity for more wide ranging testing 
+of the new ideas produced in the two other research set-ups. Typically, the research effort is a pilot project is 
+started by preparing a list of objectives engaged with relevant documents explaining how the project is going to be 
+carried out. The documentation should also provide a time-line for the pilot and framework for measuring the 
+resultant success (or failure).  
+Compared with pilot projects a demonstration project has different time scale and scope. Where a pilot project last 
+even years, a demonstration project may lasts only a few months. Usually, a demonstration project is not a full 
+scale construction project, rather it can be part of it. This research set-up provides an opportunity for researcher to 
+test specific new ideas in practice in relative short time, e.g. for the duration of a single project phase. A specific 
+challenge can be the overall continuity of the main project. In other words, it can be difficult to carry out a part of 
+the project using a different practice and then after that to return back to the traditional way of project execution 
+practice.  
+243 M. Naaranoja et al. /  Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+A pop-up project is a research set-up that can last only a few days up to one month. A pop-up project can also be 
+called a feasibility study or an experimental trial. It is a small-scale, short-term experiment that helps the researcher 
+learns how a large-scale project might work in practice. The core idea of a pop-up project is to commence a trial of 
+new idea as quickly as possible, with resources that are affordable (inexpensive), easy to reach and use. Usually, a 
+pop-up project does not mean carefully designed final solution with all details rather it means fast sketching and 
+building of early versions for prompt testing purposed. Research can be then performed in three steps: within the 
+pop-up preparation, during the actual pop-up implementation and after closing pop-up. The biggest advantage of  
+the pop-up research is that  it provides chance for collecting research data very fast. After analyzing the test results 
+can be decided whether the new method or idea is good enough to be used in a larger scale maneuvers. 
+4. The ongoing research  
+4.1 The Indoor Environments research program 
+The ”Indoor Environments” (IE) research program is a highly ambitious research program coordinated by the 
+Strategic Centre for Science, Technology and Innovation for Built Environment (RYM). The overall target of this 
+four year research effort is built around a rather radical vision where we see conditions, where humans will go 
+from outdoor spaces into the indoor environment to grasp fresh air, to refresh themselves and to get inspired. The 
+IE  research program consists of four work packages. The main objectives of those are user-centric spaces and their 
+energy-efficient management, revenue models for good indoor environment, and design and implementation of 
+inspiring learning environments. 
+The IE program’s research agenda through far-reaching, collaborative and multidisciplinary research work is 
+carried of jointly by companies, universities and research centres. The research work will be carried out by 31 
+industrial partners and 13 research partners, included with the coordinator RYM there are totally 45 partners in this 
+research consortium. Within the IE program the authors’ research activities are focusing on university campus 
+renovation and development projects. The way towards novel inspiring learning environments is an important 
+viewpoint of this research. Particularly the main interest is focusing on possible new organizational innovations for 
+temporary organizations i.e. for projects that may facilitate cross-organizational and cross-disciplinary 
+collaboration.  
+The research includes design of pilot projects, demonstration projects and pop-up projects for testing possible 
+organizational solutions. The present practices, their characteristics and outcomes are forming research baseline 
+and point of departure for comparative studies.  Currently the design of learning environments seems to be strongly 
+anchored to the needs of traditional learning processes, industrial standards and recommendations and restrictions 
+of old facilities. (OPM, Neufert 2008). The implementations are driven by cost efficiency, traditional 
+administrative boarders and personal perspectives of architects. The processes are often linear, the solutions are 
+static and they do not provide flexibility in terms of transformation according to the organizational changes. (Nair 
+& Fielding, 2007).  
+4.2 Current campus pilot projects 
+Major renovation and new building projects are under way in the campus of Tampere University of technology 
+(Fig. 4). 
+These projects provide opportunities to arrange different research set-ups. Examples of current projects and 
+research set-ups within those are: 
+Ͳ  “Kampusareena” building: The target of Kampusareena is to be jointly a location for integrative 
+operations of the Tampere University of technology, and to be an innovative business centre that can be 
+244   M. Naaranoja et al. /  Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+an ideal location for research-intensive enterprises and companies engaged in the development and 
+production of new technology, services and products. The construction of Kampusareena has been started 
+in the 1st quarter of 2013 and the building will be completed on 2015. Size of the building will be around 
+12 000 square meter. Kampusareena is a important large scale pilot project for various research actions. 
+Ͳ R-building renovation: R-building is the home for the department of civil engineering and school of 
+architecture. The renovation of  R-building has been stated on year 2010 and will be completed on end of 
+the year 2013. Totally size of the project is 13 500 square meters. As a whole this renovation project is a 
+target of research where e.g. cooperation and communication between different stakeholders is studied 
+together with possible changes for improving current practices.  
+Ͳ Extension of “Café Motivaattori”: This short-term project was fully completed in 2012 including the 
+needed design, renovation and final hand over. The research addressed new kind of functional spaces and 
+arrangement. 
+Ͳ Casual space for students and faculty, S-building: This pop-up project was implemented on spring 2012. 
+A new casual environment was built to the second floor of S-building. Size of the project was 150 square 
+meters and building time was one day. The pop-up project lasted one week. 
+Fig. 4. New building and renovation projects for developing further the campus of Tampere University of Technology are the objects of the 
+current action research efforts. 
+Variety of research themes are present inside the different projects listed above. Examples of those are: 
+− Working processes: Participatory design where end-users have a new kind of active role in the design 
+process, Knowledge management and sharing practices as enablers for cooperation and 
+communication. 
+− Organizational structures: Trials with new kind of formal or informal organizational solutions. Look at 
+Kähkönen et al. (2013).  
+− Design solutions: How new innovative design solutions for university campus spaces can be designed, 
+how they are received and what kind of benefits can be achieved by those. 
+5. Conclusions 
+Scientific evidence from the construction projects can be extracted in different ways. In this paper we have tried 
+to unwrap research approaches where interventions, i.e. changes addressing traditional business practices, are part 
+of the actual research effort. In a rather provocative manner we have categorized different research efforts to 
+passive observational research and active observational research. Most of current research efforts can be classified 
+245 M. Naaranoja et al. /  Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+to represent passive observational research where researchers are observing current practices and have as a target 
+to end up valuable insights and understanding that can help to develop the profession further. The world of active 
+observational research is very different from that. In these efforts the researchers work as inside observers who are 
+trying to make change by certain a kind of trial. Research data is then extracted from this experiment. 
+Active observational research has certain benefits that are not in place regarding passive observational research. 
+In particular, the time can be shortened that is needed for the realization of innovations and gaining the relating 
+competitive advantage. However, active observational research and action research represent school of thinking 
+that has relative small importance in the world of project management research.  
+Acknowledgements 
+The authors would like to express their gratitude to the companies involved in the research effort behind this 
+paper. Particularly we would like to mention Suomen Yliopistokiinteistöt –corporation and thank its personnel for 
+their interest towards research based new solutions for the university campus development. 
+References 
+Artto, K. & Kujala, J. (2008) Project business as a research field, International Journal of Managing Projects in Business, Vol. 1 No. 4, 2008 
+pp. 469-497 
+Blomquist, T., Hällgren , M., Nilsson, A. & Söderholm, A. (2010) Project Management Research That Matters, Project Management Journal, 
+41(1): 5–16 
+Bogdan, R. & S.J. Taylor (1975). Introduction to Qualitative Research Methods. John Wiley & Sons. 
+Bredillet, C.N. (2011) Editorial, Project Management Journal, 42: 2 
+Cicmil, S. (2006) Understanding project management practice through interpretative and critical research perspectives, Project Management 
+Journal , (37)2:27-37 
+Creswell, J. W., V. L. Plano Clark, M. Gutmann, and W. Hanson. 2003. Advanced mixed methods research designs. In Handbook on mixed 
+methods in the behavioral and social sciences, ed. A. Tashakkori and C. Teddlie, 209–40. Thousand Oaks, CA: Sage. 
+Eskola, J. & J. Suoranta (1999). Johdatus laadulliseen tutkimukseen (Introduction to qualitative research). Jyväskylä: Gummerus Kirjapaino Oy 
+Grundy S. (1983), Three modes of  action research, Curriculum Perspectives 3(2): 22-34.  
+Kahkonen, K., Keinanen, M. and Naaranoja, M. (2013) Core Project Teams as an Organizational Approach for Projects and Their Management, 
+Procedia - Social and Behavioural Sciences Journal, 74, pp. 65-72 
+Kwak, Y.H. &  Anbari, F.T.  (2008) Analyzing project management research: Perspectives from top management journals, International Journal 
+of Project Management 27: 435–446 
+Kuhn, T. S. (1962)The structure of scientific revolutions, Oxford University Press. 
+Mackenzie N and Knipe S, 2006, Research dilemmas: Paradigms, Methods and Methodology, Issues In Educational Research, Vol 16 
+Newton, P. and D. Burgess (2008). Exploring Types of Educational Action Research: Implications for Research Validity. International Journal 
+of Qualitative Methods 7(4): 18-30. 
+Olkkonen, T. (1993). Introduction to Industrial Management Research (in Finnish). Helsinki University of Technology, Industrial Economics 
+and Industrial Psychology, Report No 152. 
+Shenhar, A. & Dvir, D. (2007) Project Management Research – The Vhallenge and Opportunity, Project Management Journal, 38(2): 93-99. 
+Stringer, E. 1999. Action Research, 2nd ed. Thousand Oaks: SAGE Publications. 
+246   M. Naaranoja et al. /  Procedia - Social and Behavioral Sciences  119 ( 2014 )  237 – 246 
+Winter, M. (2006) Directions for future research in project management: The main findings of a UK government-funded research network , 
+International journal of project management, 24(8): 638 -649   
