@@ -12,7 +12,9 @@
     <properties>
         <encoding>UTF-8</encoding>
         <java.version>1.8</java.version>
+        <jsoup.version>1.8.2</jsoup.version>
         <junit.version>4.12</junit.version>
+        <lucene.version>3.6.0</lucene.version>
         <mahout.version>0.10.0</mahout.version>
         <maven.dependency.version>2.5.1</maven.dependency.version>
         <maven.deploy.version>2.8.1</maven.deploy.version>
@@ -123,11 +125,11 @@
             <version>${spark.version}</version>
         </dependency>
         <!-- Apache Mahout -->
-        <dependency>
-            <groupId>org.apache.mahout</groupId>
-            <artifactId>mahout-integration</artifactId>
-            <version>${mahout.version}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.mahout</groupId>-->
+            <!--<artifactId>mahout-integration</artifactId>-->
+            <!--<version>${mahout.version}</version>-->
+        <!--</dependency>-->
         <!-- Apache PDF to Text Converter -->
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
@@ -135,6 +137,29 @@
             <version>${pdfbox.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- Lucene Core -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-core</artifactId>
+            <version>${lucene.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Lucene Analyzer -->
+        <dependency>
+            <groupId>org.apache.lucene</groupId>
+            <artifactId>lucene-analyzers</artifactId>
+            <version>${lucene.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- JSoup Extractor -->
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${jsoup.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+
     </dependencies>
 
 </project>
