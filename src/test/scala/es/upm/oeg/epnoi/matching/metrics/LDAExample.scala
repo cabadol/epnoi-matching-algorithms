@@ -17,9 +17,6 @@ import org.apache.spark.mllib.clustering.LDA
 import org.apache.spark.mllib.linalg.{Vector, Vectors}
 import org.apache.spark.rdd.RDD
 
-/**
- * Created by cbadenes on 20/04/15.
- */
 object LDAExample {
 
   def main(args: Array[String]): Unit = {
