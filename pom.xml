@@ -6,7 +6,7 @@
 
     <groupId>es.upm.oeg.epnoi</groupId>
     <artifactId>epnoi-matching-metrics</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.1</version>
 
     <packaging>jar</packaging>
     <properties>
@@ -105,18 +105,6 @@
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-core_2.10</artifactId>
             <version>${spark.version}</version>
-            <!--
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                </exclusion>
-            </exclusions>
-            -->
         </dependency>
         <!-- Machine Learning Spark Library -->
         <dependency>
@@ -124,12 +112,6 @@
             <artifactId>spark-mllib_2.10</artifactId>
             <version>${spark.version}</version>
         </dependency>
-        <!-- Apache Mahout -->
-        <!--<dependency>-->
-            <!--<groupId>org.apache.mahout</groupId>-->
-            <!--<artifactId>mahout-integration</artifactId>-->
-            <!--<version>${mahout.version}</version>-->
-        <!--</dependency>-->
         <!-- Apache PDF to Text Converter -->
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
