@@ -10,6 +10,9 @@ import scala.collection.mutable
 
 /**
  * Created by cbadenes on 22/04/15.
+ * @param directory
+ * @param tokenizer
+ * @param featurer
  */
 class FeatureGenerator (directory: String, tokenizer: Tokenizer, featurer: Featurer) extends Serializable{
 
@@ -31,7 +34,7 @@ class FeatureGenerator (directory: String, tokenizer: Tokenizer, featurer: Featu
   val termCounts: Array[(String, Long)] = WordCounter.flatCount(tokenized.values)
 
   // Corpus Vocabulary
-  val vocabulary: Array[String] = Vocabulary.all(termCounts)
+  val vocabulary: Array[String] = WordFilter.all(termCounts)
 
   // Map term -> term index
   val vocabularyMap: Map[String, Int] = vocabulary.zipWithIndex.toMap

@@ -7,7 +7,7 @@ import org.apache.spark.rdd.RDD
 /**
  * Created by cbadenes on 20/04/15.
  */
-class TFIDFWholeExtractor (numFeatures: Integer) extends Serializable {
+class TFIDFCounter (numFeatures: Integer) extends Serializable {
 
 
 

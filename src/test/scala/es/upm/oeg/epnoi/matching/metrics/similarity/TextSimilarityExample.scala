@@ -14,11 +14,11 @@ object TextSimilarityExample {
     val generator = new FeatureGenerator("src/test/corpus/articles", Tokenizer.Lucene, Featurer.WordCounter)
 
     // Get text similarity
-    println("learning a topic model..")
+    println("learning topic model..")
     val simText = new TextSimilarity(generator.featureVectors)
     println("completed!")
 
-    // Print log-likelihood
+    // Print Model
     println("*"*20+" Model:")
     println("Number of topics: \t" + simText.lda.getK)
     println("Alpha: \t" + simText.lda.getAlpha)

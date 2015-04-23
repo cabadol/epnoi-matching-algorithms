@@ -3,7 +3,7 @@ package es.upm.oeg.epnoi.matching.metrics.feature
 /**
  * Created by cbadenes on 21/04/15.
  */
-object Vocabulary {
+object WordFilter {
 
   def all( wordCounts: Array[(String, Long)]): Array[String] ={
     wordCounts.map(_._1)

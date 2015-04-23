@@ -5,4 +5,8 @@ package es.upm.oeg.epnoi.matching.metrics.distance
  */
 object HellingerDistance {
 
+  def between (p: Array[Double], q: Array[Double]): Double ={
+    0.0
+  }
+
 }

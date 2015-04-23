@@ -1,5 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.feature
 
+import es.upm.oeg.epnoi.matching.metrics.utils.SparkWrapper
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.mllib.feature.{HashingTF, IDF}
 import org.apache.spark.rdd.RDD
@@ -12,25 +13,11 @@ object TFIDFWholeExample {
 
   def main(args: Array[String]): Unit = {
 
-    /***********************************
-      * Spark Context
-      ***********************************/
-    println("Starting...")
-    val conf = new SparkConf().setMaster("local").setAppName("TFIDF Whole Example")
-    val sc = new SparkContext(conf)
-    Logger.getRootLogger.setLevel(Level.WARN)
-
-
-    /***********************************
-      * Load corpus
-      ***********************************/
     // Load a directory
-    val files: RDD[(String,String)]= sc.wholeTextFiles("src/test/resources/tfidf")
+    val files: RDD[(String,String)]= SparkWrapper.readCorpus("src/test/resources/tfidf")
 
-    /***********************************
-      * Feature Extraction: TF-IDF
-      ***********************************/
-    val tfidfVectors = new TFIDFWholeExtractor(1000).feature(files)
+    // tf-idf
+    val tfidfVectors = new TFIDFCounter(1000).feature(files)
 
 
   }
