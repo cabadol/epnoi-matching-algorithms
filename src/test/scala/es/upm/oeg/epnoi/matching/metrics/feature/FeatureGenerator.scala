@@ -23,7 +23,7 @@ class FeatureGenerator (directory: String, tokenizer: Tokenizer, featurer: Featu
 
   val tokenized: RDD[(String, Seq[String])] = tokenizer match{
     case Lucene   =>   corpus.mapValues(LuceneTokenizer.split)
-    case Default  =>   corpus.mapValues(SimpleTokenizer.split)
+    case Default  =>   corpus.mapValues(CommonTokenizer.split)
   }
 
 

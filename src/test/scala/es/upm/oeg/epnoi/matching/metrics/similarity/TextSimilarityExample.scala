@@ -49,7 +49,10 @@ object TextSimilarityExample {
 
     // Print similarity matrix
     println("*"*20+" Similarity between documents:")
-    simText.matrix.collect.foreach(tuple=>println(s"\t${generator.keyToDoc(tuple._1)} -> ${generator.keyToDoc(tuple._2)} \t: ${tuple._3%1.5f}"))
+    simText.matrix.collect.foreach{x =>
+      println(s"${generator.keyToDoc(x._1)}")
+      x._2.foreach(tuple=>println(s"\t${generator.keyToDoc(tuple._2)} \t: ${{tuple._3}%1.5f}"))
+    }
 
     // Print documents as vector of tokens
     println("*"*20+" Tokens:")

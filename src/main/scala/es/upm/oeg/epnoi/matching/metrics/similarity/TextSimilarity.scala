@@ -22,9 +22,10 @@ class TextSimilarity (featureVectors: RDD[(Long, Vector)]) extends Serializable 
   val model: DistributedLDAModel = lda.run(featureVectors)
 
   // Calculate the Jensen-Shannon-based Divergence similarity measure for each document
-  val matrix: RDD[(Long,Long,Double)] = model.topicDistributions.cartesian(model.topicDistributions).map { case (p,q) =>
+  val matrix: RDD[(Long, Iterable[(Long, Long, Double)])] = model.topicDistributions.cartesian(model.topicDistributions).map { case (p,q) =>
     (p._1,q._1,JensenShannonSimilarity.between(p._2.toArray, q._2.toArray))
-  }
+  }.groupBy(_._1).map(x=> (x._1,x._2.toSeq.sortBy(_._3)))
+
 
   def printDetails(): Unit ={
 
