@@ -1,10 +1,8 @@
 package es.upm.oeg.epnoi.matching.metrics.feature
 
-import java.util
+import es.upm.oeg.epnoi.matching.metrics.LuceneClassifier
 
 import scala.collection.JavaConverters._
-import es.upm.oeg.epnoi.matching.metrics.LuceneClassifier
-import es.upm.oeg.epnoi.matching.metrics.LuceneClassifier.Keyword
 
 /**
  * Created by cbadenes on 22/04/15.

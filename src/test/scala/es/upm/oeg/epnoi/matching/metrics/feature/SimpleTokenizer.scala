@@ -16,7 +16,7 @@ object SimpleTokenizer {
 
   def isValid (word: String): Boolean ={
 //    word.length > 4 &&
-      !StandardAnalyzer.STOP_WORDS_SET.contains(word) && word.forall(java.lang.Character.isLetter) && word.forall(x=>isEncoded("US-ASCII",x))
+    word.length > 6 && !StandardAnalyzer.STOP_WORDS_SET.contains(word) && word.forall(java.lang.Character.isLetter) && word.forall(x=>isEncoded("US-ASCII",x))
   }
 
   def isEncoded (charset: String, letter: Char): Boolean ={
