@@ -1,7 +1,10 @@
 package es.upm.oeg.epnoi.matching.metrics.distance
 
 /**
- * Created by cbadenes on 22/04/15.
+ * Method of measuring the similarity between two probability distributions. It is also known as Information Radius (IRad)
+ * or Total Divergence to the Average.
+ * It is based on the Kullback–Leibler divergence, with some differences, including that it is symmetric and it is always
+ * a finite value.
  */
 object JensenShannonDivergence {
 

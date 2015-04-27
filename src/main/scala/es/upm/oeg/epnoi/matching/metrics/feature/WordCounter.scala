@@ -1,6 +1,10 @@
 package es.upm.oeg.epnoi.matching.metrics.feature
 
+import es.upm.oeg.epnoi.matching.metrics.model._
+import org.apache.spark.mllib.linalg.{Vectors, Vector}
 import org.apache.spark.rdd.RDD
+
+import scala.collection.mutable
 
 
 object WordCounter {
@@ -18,6 +22,17 @@ object WordCounter {
       tokens.map((_,1L))
     }
 
+
+    def count(terms: Seq[String], vocabulary: Vocabulary): Vector = {
+      val counts = new mutable.HashMap[Int, Double]()
+      terms.foreach { term =>
+        if (vocabulary.contains(term)) {
+          val idx = vocabulary.key(term).toInt
+          counts(idx) = counts.getOrElse(idx, 0.0) + 1.0
+        }
+      }
+      Vectors.sparse(vocabulary.size, counts.toSeq)
+    }
 
 
 }

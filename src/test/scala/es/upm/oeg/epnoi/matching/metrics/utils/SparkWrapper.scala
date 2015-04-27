@@ -9,20 +9,18 @@ import org.apache.spark.{SparkConf, SparkContext}
  */
 object SparkWrapper {
 
+  val conf = new SparkConf().setMaster("local").setAppName("Local Spark Example")
+
+  val sc = new SparkContext(conf)
+
+  Logger.getRootLogger.setLevel(Level.WARN)
+
   def readCorpus (directory: String): RDD[(String,String)] = {
-    localContext.wholeTextFiles(directory).map{case (file,content) =>
-      // File name only (path removed)
-      (file.substring(file.lastIndexOf("/")+1),content)
-    }
-  }
-
-
-  def localContext(): SparkContext ={
-    // Initialize Spark Context
-    val conf = new SparkConf().setMaster("local").setAppName("Local Spark Example")
-    val sc = new SparkContext(conf)
-    Logger.getRootLogger.setLevel(Level.WARN)
-    return sc
+    sc.wholeTextFiles(directory)
+//      .map{case (file,content) =>
+//      // File name only (path removed)
+//      (file.substring(file.lastIndexOf("/")+1),content)
+//    }
   }
 
 }

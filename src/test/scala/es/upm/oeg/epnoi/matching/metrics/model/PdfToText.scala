@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.utils
+package es.upm.oeg.epnoi.matching.metrics.model
 
 import java.io._
 
@@ -8,10 +8,10 @@ import org.apache.pdfbox.util.PDFTextStripper
 object PdfToText {
 
 
-    def main(args: Array[String]) {
+    def toFiles(directory: String) {
 
       val stripper = new PDFTextStripper
-      new File("src/test/resources/paper-corpus").listFiles().
+      new File(directory).listFiles().
         filter(_.getName.endsWith("pdf")).
         map(file=>(file.getAbsolutePath.replace(".pdf",".txt"),stripper.getText(PDDocument.load(file)))).
         foreach{ case (path,content) =>
@@ -21,6 +21,11 @@ object PdfToText {
           println(s"$path created!")
         }
 
+    }
+
+
+    def from (path: String): String ={
+      new PDFTextStripper("utf-8").getText(PDDocument.load(path))
     }
 
 }

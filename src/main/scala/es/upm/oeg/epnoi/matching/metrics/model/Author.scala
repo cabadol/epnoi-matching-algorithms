@@ -1,16 +1,16 @@
 package es.upm.oeg.epnoi.matching.metrics.model
 
 /**
- * Created by cbadenes on 23/04/15.
+ * An entity primarily responsible for making the resource.
+ * @param uri
+ * @param name
+ * @param surname
  */
-case class Author (id: String) {
-
-  var name: String    = "no-name"
-
-  var surname: String = "no-surname"
+case class Author (uri: String, name: String, surname: String) extends Serializable{
 
   var topicModel: Array[Double] = Array.empty
 
-  
+  // Orcid, dblp, ads
+  var digitalIds: Map[String,String] = Map.empty
 
 }

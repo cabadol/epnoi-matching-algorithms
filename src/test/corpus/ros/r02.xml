@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:provenance="http://www.openarchives.org/OAI/2.0/provenance" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <responseDate>2015-03-27T08:55:25Z</responseDate>
+    <request verb="ListRecords" metadataPrefix="oai_dc">http://www.sciencepubco.com/index.php/IJAA/oai</request>
+    <ListRecords>
+        <record>
+            <header>
+                <identifier>oai:ojs.localhost:article/1315</identifier>
+                <datestamp>2014-11-13T08:20:10Z</datestamp>
+                <setSpec>IJAA:ART</setSpec>
+            </header>
+            <metadata>
+                <dc>
+                    <dc:title xml:lang="en-US">Black hole Cosmos and the Micro Cosmos</dc:title>
+                    <dc:creator>UV, Satya Seshavatharam; I-SERVE, Hyderabad, AP, India.
+Sr. Engineer, QA-DIP, Lanco Industries Ltd, Tirupati, AP, India.</dc:creator>
+                    <dc:creator>S, Lakshminarayana; AU, AP, India</dc:creator>
+                    <dc:description xml:lang="en-US"></dc:description>
+                    <dc:publisher xml:lang="en-US">Science Publishing Corporation</dc:publisher>
+                    <dc:date>2013-10-19</dc:date>
+                    <dc:type>info:eu-repo/semantics/article</dc:type>
+                    <dc:type>info:eu-repo/semantics/publishedVersion</dc:type>
+                    <dc:type xml:lang="en-US">Peer-reviewed Article</dc:type>
+                    <dc:format>application/pdf</dc:format>
+                    <dc:identifier>http://www.sciencepubco.com/index.php/IJAA/article/view/1315</dc:identifier>
+                    <dc:identifier>10.14419/ijaa.v1i2.1315</dc:identifier>
+                    <dc:source xml:lang="en-US">International Journal of Advanced Astronomy; Vol 1, No 2 (2013); 37-59</dc:source>
+                    <dc:source>2312-7414</dc:source>
+                    <dc:source>10.14419/ijaa.v1i2</dc:source>
+                    <dc:language>eng</dc:language>
+                    <dc:relation>http://www.sciencepubco.com/index.php/IJAA/article/view/1315/879</dc:relation>
+                    <dc:relation>http://www.sciencepubco.com/index.php/IJAA/article/downloadSuppFile/1315/325</dc:relation>
+                </dc>
+            </metadata>
+        </record>
+    </ListRecords>
+</OAI-PMH>
