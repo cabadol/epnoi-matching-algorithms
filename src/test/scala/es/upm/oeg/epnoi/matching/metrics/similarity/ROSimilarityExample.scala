@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
-import es.upm.oeg.epnoi.matching.metrics.corpus.Articles
+import es.upm.oeg.epnoi.matching.metrics.corpus._
 import es.upm.oeg.epnoi.matching.metrics.model.space.{RepresentationalSpace, SemanticSpace}
 
 /**
@@ -19,18 +19,18 @@ object ROSimilarityExample {
     val semanticSpace: SemanticSpace = new SemanticSpace(representationalSpace)
 
     // Research Object Similarity
-    semanticSpace.semanticResources.cartesian(semanticSpace.semanticResources).map{ case(sr1,sr2)=>
-      val sim = ROSimilarity(sr1,sr2)
-      (sr1,sr2,sim)
-    }.groupBy(_._1).map(x=>(x._1,x._2.toSeq.sortBy(_._3))).foreach{ case (sr,list) =>
-      println(s"sim[${sr.resource.uri}]")
-      list.foreach{ case (sr1,sr2,sim) =>
-        println(s"\t·${sr2.resource.uri}\t$sim")
+    ROSimilarity.cross(semanticSpace.semanticResources).foreach { case (semanticResource, semanticResourceTuples) =>
+      val builder = new StringBuilder()
+      builder.append(s"ro_sim[${semanticResource.resource.uri}]: \n")
+      val it = semanticResourceTuples.iterator
+      while (it.hasNext) {
+        val tuple = it.next()
+        builder.append(s"\t·${tuple._2.resource.uri}\t${tuple._3}\n")
       }
+      println(builder.toString())
     }
 
-
-
+    // Print total time
     val totalTime = System.currentTimeMillis - start
     println("Elapsed time: %1d ms".format(totalTime))
 

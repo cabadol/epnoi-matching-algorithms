@@ -1,10 +1,13 @@
-package es.upm.oeg.epnoi.matching.metrics.model
+package es.upm.oeg.epnoi.matching.metrics.utils
 
 import java.io._
 
 import org.apache.pdfbox.pdmodel.PDDocument
 import org.apache.pdfbox.util.PDFTextStripper
 
+/**
+ *
+ */
 object PdfToText {
 
 

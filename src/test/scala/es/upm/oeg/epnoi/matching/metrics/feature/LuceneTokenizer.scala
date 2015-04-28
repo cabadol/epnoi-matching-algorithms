@@ -9,7 +9,7 @@ import scala.collection.JavaConverters._
  */
 object LuceneTokenizer {
 
-  def split (text: String): Seq[String] = {
+  def apply (text: String): Seq[String] = {
     LuceneClassifier.guessFromString(text).asScala.toList.map(_.getStem).filter(CommonTokenizer.isValid)
   }
 

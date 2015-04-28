@@ -5,7 +5,7 @@ import es.upm.oeg.epnoi.matching.metrics.model.item.{Metadata, Resource}
 import es.upm.oeg.epnoi.matching.metrics.utils.SparkWrapper
 
 
-object Virtual {
+object Code {
 
   def toList(words: Option[Seq[String]]): Seq[String]={
     words match{
@@ -41,8 +41,6 @@ object Virtual {
     metadata    = Metadata("title-04","2012",Some(List(Authors.a4,Authors.a1,Authors.a5))),
     words       = Some(toList(ro2.words).++(toList(ro3.words))),
     resources   = Some(List(ro2,ro3)))
-
-
 
 
   val corpus = SparkWrapper.sc.parallelize(List(ro1,ro4))

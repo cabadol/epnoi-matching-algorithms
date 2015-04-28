@@ -16,7 +16,7 @@ case object Articles {
       uri         = s"ro.oeg.es/resource/$name",
       url         = x._1,
       metadata    = Metadata(s"title-$name","2011",Some(List(Authors.a1,Authors.a2,Authors.a3))),
-      words       = Some(LuceneTokenizer.split(x._2)),
+      words       = Some(LuceneTokenizer(x._2)),
       resources   = None)
   }
 
