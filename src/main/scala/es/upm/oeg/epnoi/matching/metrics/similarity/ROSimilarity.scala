@@ -27,8 +27,8 @@ object ROSimilarity {
    * @return RDD[(SemanticResource,Iterable[(SemanticResource,SemanticResource,Double)])]
    */
   def cross(semanticResources: RDD[SemanticResource]): RDD[(SemanticResource,Iterable[(SemanticResource,SemanticResource,Double)])]={
+    // No sort result because fail on equals over case class (Array[Double])
     semanticResources.cartesian(semanticResources).map{case(sr1,sr2)=>(sr1,sr2,apply(sr1,sr2))}.groupBy(_._1)
-    // TODO sort by similarity sortByKey(_._3,false)
   }
 
 }

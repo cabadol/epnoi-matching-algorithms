@@ -1,7 +1,5 @@
 package es.upm.oeg.epnoi.matching.metrics.model.item
 
-import org.apache.spark.rdd.RDD
-
 /**
  * Relevant data to interpreting and preserving the results of scientific investigations (e.g. publications,
  * source code, data artefacts, methods, experiments)

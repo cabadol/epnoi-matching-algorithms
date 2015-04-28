@@ -20,14 +20,10 @@ object ROSimilarityExample {
 
     // Research Object Similarity
     ROSimilarity.cross(semanticSpace.semanticResources).foreach { case (semanticResource, semanticResourceTuples) =>
-      val builder = new StringBuilder()
-      builder.append(s"ro_sim[${semanticResource.resource.uri}]: \n")
-      val it = semanticResourceTuples.iterator
-      while (it.hasNext) {
-        val tuple = it.next()
-        builder.append(s"\t·${tuple._2.resource.uri}\t${tuple._3}\n")
+      println(s"ro_sim[${semanticResource.resource.uri}]:")
+      semanticResourceTuples.toSeq.sortBy(x=>1-x._3).foreach{ case(sr1,sr2,sim) =>
+        println(s"\t${sr2.resource.uri.concat(" "*(45-sr2.resource.uri.length))}\t${sim}")
       }
-      println(builder.toString())
     }
 
     // Print total time
