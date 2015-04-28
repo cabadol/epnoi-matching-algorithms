@@ -1,7 +1,8 @@
-package es.upm.oeg.epnoi.matching.metrics.similarity
+package es.upm.oeg.epnoi.matching.metrics.corpus
 
 import es.upm.oeg.epnoi.matching.metrics.feature.LuceneTokenizer
 import es.upm.oeg.epnoi.matching.metrics.model._
+import es.upm.oeg.epnoi.matching.metrics.model.item.{Metadata, Resource}
 import es.upm.oeg.epnoi.matching.metrics.utils.SparkWrapper
 
 /**
@@ -13,9 +14,9 @@ case object Articles {
     val name = x._1.substring(x._1.lastIndexOf("/")+1)
     Resource(
       uri         = s"ro.oeg.es/resource/$name",
-      metadata    = Metadata(s"ro.oeg.es/metadata/$name",x._1,s"title-$name","2011",List(Authors.a1,Authors.a2,Authors.a3)),
-      terms       = LuceneTokenizer.split(x._2),
-      topicModel  = None,
+      url         = x._1,
+      metadata    = Metadata(s"title-$name","2011",Some(List(Authors.a1,Authors.a2,Authors.a3))),
+      words       = Some(LuceneTokenizer.split(x._2)),
       resources   = None)
   }
 

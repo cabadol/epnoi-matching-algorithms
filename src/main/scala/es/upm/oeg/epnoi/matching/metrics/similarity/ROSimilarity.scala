@@ -1,6 +1,7 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
 import es.upm.oeg.epnoi.matching.metrics.model._
+import es.upm.oeg.epnoi.matching.metrics.model.item.SemanticResource
 import org.apache.spark.rdd.RDD
 
 /**
@@ -14,9 +15,10 @@ object ROSimilarity {
    * @param r2
    * @return
    */
-  def between (r1: Resource, r2: Resource): Double={
+  def apply (r1: SemanticResource, r2: SemanticResource): Double={
+
     // First approach: Only textual similarity
-    ContentSimilarity.between(r1,r2)
+    TopicsSimilarity.between(r1,r2)
   }
 
 

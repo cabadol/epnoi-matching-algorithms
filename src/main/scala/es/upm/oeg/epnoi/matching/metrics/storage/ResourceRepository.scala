@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.storage
 
-import es.upm.oeg.epnoi.matching.metrics.model.Resource
+import es.upm.oeg.epnoi.matching.metrics.model.item.Resource
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.rdd.RDD
 
