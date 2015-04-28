@@ -23,13 +23,11 @@
         <maven.site.version>0.10</maven.site.version>
         <pdfbox.version>1.8.9</pdfbox.version>
         <scala.version>2.11.6</scala.version>
-        <spark.version>1.3.0</spark.version>
-        <standford.version>3.5.1</standford.version>
+        <scalatest.version>2.2.4</scalatest.version>
+        <spark.version>1.3.1</spark.version>
     </properties>
 
     <build>
-        <sourceDirectory>src/main/scala</sourceDirectory>
-        <testSourceDirectory>src/test/scala</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.scala-tools</groupId>
@@ -100,17 +98,25 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- Scala Test -->
+        <dependency>
+            <groupId>org.scalatest</groupId>
+            <artifactId>scalatest_2.11</artifactId>
+            <version>${scalatest.version}</version>
+            <scope>test</scope>
         </dependency>
         <!-- Spark Core -->
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.10</artifactId>
+            <artifactId>spark-core_2.11</artifactId>
             <version>${spark.version}</version>
         </dependency>
         <!-- Machine Learning Spark Library -->
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-mllib_2.10</artifactId>
+            <artifactId>spark-mllib_2.11</artifactId>
             <version>${spark.version}</version>
         </dependency>
         <!-- Apache PDF to Text Converter -->
@@ -141,19 +147,6 @@
             <version>${jsoup.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- Standford NLP -->
-        <dependency>
-            <groupId>edu.stanford.nlp</groupId>
-            <artifactId>stanford-corenlp</artifactId>
-            <version>${standford.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>edu.stanford.nlp</groupId>
-            <artifactId>stanford-corenlp</artifactId>
-            <version>${standford.version}</version>
-            <classifier>models</classifier>
-        </dependency>
-
     </dependencies>
 
 </project>

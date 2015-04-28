@@ -18,7 +18,7 @@ baseball05.txt:	[0.09143620925378076,0.03708872815230271,0.8384562457129766,0.03
 
     println(s"p:${p.toList}")
     println(s"q:${q.toList}")
-    println(s"Bernoulli: ${Bernoulli.joint(p,q).toList}")
+    println(s"Bernoulli: ${Bernoulli(p,q).toList}")
 
   }
 }

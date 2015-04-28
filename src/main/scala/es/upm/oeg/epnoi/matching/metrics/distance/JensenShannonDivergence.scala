@@ -8,7 +8,7 @@ package es.upm.oeg.epnoi.matching.metrics.distance
  */
 object JensenShannonDivergence {
 
-  def between (p: Array[Double], q: Array[Double]): Double ={
+  def apply (p: Array[Double], q: Array[Double]): Double ={
     var sumP : Double = 0.0
     var sumQ : Double = 0.0
 

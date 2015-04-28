@@ -17,7 +17,7 @@ object ROSimilarity {
   def apply (r1: SemanticResource, r2: SemanticResource): Double={
 
     // First approach: Only textual similarity
-    TopicsSimilarity.between(r1,r2)
+    TopicsSimilarity(r1,r2)
   }
 
 

@@ -10,8 +10,8 @@ import es.upm.oeg.epnoi.matching.metrics.model.item.SemanticResource
 object TopicsSimilarity {
 
 
-  def between(r1: SemanticResource, r2:SemanticResource): Double={
-    JensenShannonSimilarity.between(r1.topics.distribution,r2.topics.distribution)
+  def apply(r1: SemanticResource, r2:SemanticResource): Double={
+    JensenShannonSimilarity(r1.topics.distribution,r2.topics.distribution)
   }
 
 }

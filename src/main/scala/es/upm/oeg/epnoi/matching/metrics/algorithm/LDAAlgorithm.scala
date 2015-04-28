@@ -47,10 +47,5 @@ class LDAAlgorithm (featureVectors: RDD[(Long, Vector)]) extends Serializable {
     setTopicConcentration(topicConcentration).run(featureVectors)
   val totalTime = System.currentTimeMillis - start
   println("LDA Execution elapsed time: %1d ms".format(totalTime))
-  // Calculate the Jensen-Shannon-based Divergence similarity measure for each pair of documents
-//  val matrix: RDD[(Long, Iterable[(Long, Long, Double)])] = model.topicDistributions.cartesian(model.topicDistributions).map { case (p,q) =>
-//    (p._1,q._1,JensenShannonSimilarity.between(p._2.toArray, q._2.toArray))
-//  }.groupBy(_._1).map(x=> (x._1,x._2.toSeq.sortBy(_._3)))
-
-
+  println("Log-Likelihood: " + model.logLikelihood)
 }
