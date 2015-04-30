@@ -12,6 +12,7 @@
     <properties>
         <encoding>UTF-8</encoding>
         <java.version>1.8</java.version>
+        <jmetal.version>5.0-Beta-29</jmetal.version>
         <jsoup.version>1.8.2</jsoup.version>
         <junit.version>4.12</junit.version>
         <lucene.version>3.6.0</lucene.version>
@@ -140,13 +141,21 @@
             <version>${lucene.version}</version>
             <scope>test</scope>
         </dependency>
-        <!-- JSoup Extractor -->
+        <!-- JSoup Extractor: For lucene classifier -->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>${jsoup.version}</version>
             <scope>test</scope>
         </dependency>
+        <!-- Multi-objective optimization -->
+        <dependency>
+            <groupId>org.uma.jmetal</groupId>
+            <artifactId>jmetal-algorithm</artifactId>
+            <version>${jmetal.version}</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>
