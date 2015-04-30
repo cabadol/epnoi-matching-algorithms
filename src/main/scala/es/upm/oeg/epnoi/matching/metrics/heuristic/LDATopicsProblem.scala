@@ -1,5 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.heuristic
 
+import org.apache.commons.math3.distribution.NormalDistribution
 import org.uma.jmetal.problem.Problem
 
 import scala.util.Random
@@ -9,29 +10,37 @@ import scala.util.Random
  * @param size
  * @param function
  */
-class LDAProblem(size: Long, function: Evaluation) extends Problem[LDAParameters]{
+class LDATopicsProblem(size: Long, function: Evaluation) extends Problem[LDAParameters]{
 
   val randomGen = new Random()
 
-  def getNumberOfObjectives = 1
+  def getNumberOfObjectives = 3
 
   def getNumberOfConstraints = 2
 
   def getName = "LDA Parameters Problem"
 
+  val topicDist = new NormalDistribution(Math.sqrt(size/2).toInt,2)
+
   def evaluate(s: LDAParameters) ={
-    s.setValue(Math.abs(function.evaluate(s)))
-    println(s"Evaluating $s")
+    val result = function.evaluate(s)
+    // Objetive1 :: Minimize the abs value of logLikelihood => Maximize Likelihood
+    s.setLoglikelihood(Math.abs(result.o1))
+    // Objetive2 :: Minimize the abs value of logPrior      => Maximize Prior
+    s.setLogprior(Math.abs(result.o2))
+    // Objetive3 :: Minimize the inverse of Normal Distribution with mean in the Rule of Thumb => Maximize number of cluster close to Rule of Thumb
+    s.setTopicsObj( 1 - topicDist.density(result.o3))      
   }
 
   def getNumberOfVariables = 3
 
   def randomTopics() ={
     if (randomGen.nextBoolean()){
-      RuleOfThumb(size).toInt
+      // Rule of thumb
+      Math.sqrt(size/2).toInt
     } else {
-      val random = randomGen.nextInt(size.toInt)
-      if (random < LDAParameters.minTopics) 1
+      val random = randomGen.nextInt(size.toInt+1)
+      if (random < LDAParameters.minTopics) size.toInt
       else random
     }
   }

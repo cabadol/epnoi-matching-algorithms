@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.statistic
+package es.upm.oeg.epnoi.matching.metrics.distribution
 
 import es.upm.oeg.epnoi.matching.metrics.heuristic.{Evaluation, LDAOptimizer, LDAParameters}
 import org.apache.spark.mllib.clustering.{DistributedLDAModel, LDA}
@@ -12,7 +12,7 @@ import org.apache.spark.rdd.RDD
 class GenerativeModel (featureVectors: RDD[(Long, Vector)], optimized: Boolean) extends Serializable with Evaluation {
 
 
-  def lda (param: LDAParameters) = new LDA().
+  private def lda (param: LDAParameters) = new LDA().
     setK(param.getTopics).
     setMaxIterations(param.getMaxIterations).
     setDocConcentration(param.getAlpha).
@@ -21,17 +21,19 @@ class GenerativeModel (featureVectors: RDD[(Long, Vector)], optimized: Boolean) 
 
   def evaluate(parameters: LDAParameters) = {
     val model = lda(parameters)
+    println("----------------------------")
+    println(s"Evaluating $parameters")
     println(s"loglikelihood: " + model.logLikelihood)
     println(s"logprior: " + model.logPrior)
-    Math.abs(model.logLikelihood)
+    new Evaluation.Result(model.logLikelihood,model.logPrior,parameters.getTopics.toDouble)
   }
 
   val size = featureVectors.count()
 
-  val parameters: LDAParameters = if (optimized){
-    // Searchbest parameter configuration by Genetic Algorithm
-    // Non-dominated Sorting Genetic Algorithm (NSGAII)
-    LDAOptimizer.search(size,this).setMaxIterations(200)
+  val parameters: LDAParameters = (if (optimized){
+    // Get best configuration using Non-dominated Sorting Genetic Algorithm (NSGAII) for a LDA problem
+    val maxEvaluations = if (size < 5000) size*2 else 2500// TODO calculate value from 'size' parameter
+    LDAOptimizer.search(size,this,maxEvaluations.toInt)
   }else{
     // topics:  Number of cluster centers
     //   default: 4
@@ -44,19 +46,20 @@ class GenerativeModel (featureVectors: RDD[(Long, Vector)], optimized: Boolean) 
     //   where larger values encourage smoother inferred distributions.
     //   (symmetric distribution) A low value means that a topic may contain a mixture of just a few of the words.
     //   default: 1.1
-    new LDAParameters(4,13.5,1.1,200,size.toInt )
-  }
+    new LDAParameters(4,13.5,1.1,1,size.toInt )
+  }).setMaxIterations(200)
 
 
-  // Initialize the algorithm (Maximization-Expectation)
-  // Create the topic model
+  // Create the topic model. (Maximization-Expectation Algorithm)
   val start = System.currentTimeMillis
   println(s"Considered the following Latent Dirichlet Allocation (LDA) parameters: ")
   println(s"\t·Topics: ${parameters.getTopics}")
   println(s"\t·Alpha: ${parameters.getAlpha}")
   println(s"\t·Beta: ${parameters.getBeta}")
+  println(s"\t·Loglikelihood: -${parameters.getLoglikelihood}")
+  println(s"\t·LogPrior: -${parameters.getLogPrior}")
   println(s"Training the model...")
-  private val distributedLDAModel: DistributedLDAModel = new LDA().
+  val ldaModel: DistributedLDAModel = new LDA().
     setK(parameters.getTopics).
     setMaxIterations(parameters.getMaxIterations).
     setDocConcentration(parameters.getAlpha).
@@ -64,11 +67,6 @@ class GenerativeModel (featureVectors: RDD[(Long, Vector)], optimized: Boolean) 
     run(featureVectors)
   val totalTime = System.currentTimeMillis - start
   println("LDA Execution elapsed time: %1d ms".format(totalTime))
-  println("Log-Likelihood: " + distributedLDAModel.logLikelihood)
-
-  def topicDistributions = distributedLDAModel.topicDistributions
-
-  def topicsMatrix = distributedLDAModel.topicsMatrix
-
-
+  println("Log-Likelihood: " + ldaModel.logLikelihood)
+  println("Log-Prior: " + ldaModel.logPrior)
 }

@@ -15,9 +15,10 @@ import org.uma.jmetal.util.comparator.DominanceComparator;
  */
 public class LDAOptimizer {
 
-    public static LDAParameters search(Long size, Evaluation function){
+    public static LDAParameters search(Long size, Evaluation function, Integer maxEvaluations){
+        System.out.println("Learning parameters...");
         // Try to search best parameters for a LDA problem
-        LDAProblem problem = new LDAProblem(size, function);
+        LDATopicsProblem problem = new LDATopicsProblem(size, function);
 
         // Crossover
         Double crossoverProbability        = 0.9 ;
@@ -33,9 +34,8 @@ public class LDAOptimizer {
         BinaryTournamentSelection selection = new BinaryTournamentSelection();
 //        NaryTournamentSelection selection = new NaryTournamentSelection(3,new DominanceComparator());
 
-        // NSGA algorithm
-        Integer maxEvaluations              = 15; // 2500
-        Integer divisions                   = 12; // 12
+        // NSGAIII algorithm
+        Integer divisions                   = 12;
         NSGAIII algorithm  = new NSGAIIIBuilder(problem)
                 .setCrossoverOperator(crossover)
                 .setMutationOperator(mutation)
@@ -46,7 +46,7 @@ public class LDAOptimizer {
 
 
         AlgorithmRunner algorithmRunner = new AlgorithmRunner.Executor(algorithm).execute() ;
-        Solution result = algorithm.getResult().get(0);;
+        Solution result = algorithm.getResult().get(0);
         Long computingTime = algorithmRunner.getComputingTime() ;
         System.out.println("Total execution time: "+ computingTime +"ms");
         return (LDAParameters) result;

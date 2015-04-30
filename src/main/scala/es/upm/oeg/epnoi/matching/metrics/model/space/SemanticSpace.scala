@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.model.space
 
-import es.upm.oeg.epnoi.matching.metrics.statistic.GenerativeModel
+import es.upm.oeg.epnoi.matching.metrics.distribution.GenerativeModel
 import es.upm.oeg.epnoi.matching.metrics.feature.{Concepts, WordCounter}
 import es.upm.oeg.epnoi.matching.metrics.model.item._
 import org.apache.spark.mllib.linalg.{Vector, Vectors}
@@ -32,10 +32,10 @@ class SemanticSpace (reprSpace: RepresentationalSpace) extends Serializable {
     (key, counter)
   }
 
-  val model = new GenerativeModel(featureVectors, optimized = true)
+  val generativeModel = new GenerativeModel(featureVectors, optimized = true)
 
   // Run algorithm and save topic distributions
-  val semanticResources: RDD[SemanticResource] = model.topicDistributions.join(semanticResourcesIndexed).map{ case (key,(topics,semanticResource)) =>
+  val semanticResources: RDD[SemanticResource] = generativeModel.ldaModel.topicDistributions.join(semanticResourcesIndexed).map{ case (key,(topics,semanticResource)) =>
       semanticResource.copy(topics = TopicDistribution(topics.toArray))
   }
 
