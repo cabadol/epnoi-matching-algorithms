@@ -22,7 +22,7 @@ object ROSimilarityExample {
     val conceptSpace = new ConceptSpace(conceptualResources)
 
     // OPTIMIZATION: Search best parameters (topics, alpha and beta) for LDA process
-    LDASettings.adjust(conceptSpace.featureVectors)
+    //LDASettings.adjust(conceptSpace.featureVectors)
 
     // Topic Space
     val topicSpace: TopicSpace = new TopicSpace(conceptSpace)
@@ -32,6 +32,12 @@ object ROSimilarityExample {
 
     // Similarity matrix
     val matrix = ROSimilarity.cross(semanticResources)
+
+    val resourceSize = conceptualResources.count
+    val matrixSize = matrix.count
+    println(s"Resource Size: $resourceSize and Matrix Size: $matrixSize")
+
+    assert( resourceSize == matrixSize)
 
     // Print Resources Similarity Matrix
     matrix.foreach { case (semanticResource, semanticResourceTuples) =>

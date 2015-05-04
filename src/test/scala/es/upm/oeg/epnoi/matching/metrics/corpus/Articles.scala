@@ -10,7 +10,7 @@ import es.upm.oeg.epnoi.matching.metrics.utils.SparkWrapper
  */
 case object Articles {
 
-  val corpus = SparkWrapper.readCorpus("src/test/corpus/articles/*.txt").map{x=>
+  val corpus = SparkWrapper.readCorpus("src/test/corpus/articles/*").map{x=>
     val name = x._1.substring(x._1.lastIndexOf("/")+1)
     Resource(
       uri         = s"ro.oeg.es/resource/$name",
