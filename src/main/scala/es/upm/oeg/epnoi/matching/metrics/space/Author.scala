@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.model.item
+package es.upm.oeg.epnoi.matching.metrics.space
 
 /**
  * An entity primarily responsible for making the resource.
@@ -8,7 +8,4 @@ package es.upm.oeg.epnoi.matching.metrics.model.item
  * @param digitalId orcid, dblp, ads
  */
 case class Author (uri: String, name: String, surname: String, digitalId: Option[DigitalID]) extends Serializable{
-
-
-
 }

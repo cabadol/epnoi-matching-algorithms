@@ -1,9 +1,8 @@
 package es.upm.oeg.epnoi.matching.metrics.corpus
 
 import es.upm.oeg.epnoi.matching.metrics.feature.LuceneTokenizer
-import es.upm.oeg.epnoi.matching.metrics.model._
-import es.upm.oeg.epnoi.matching.metrics.model.item.{Author, Metadata, Resource}
-import es.upm.oeg.epnoi.matching.metrics.utils.{SparkWrapper, PdfToText}
+import es.upm.oeg.epnoi.matching.metrics.space.{Author, Metadata, Resource}
+import es.upm.oeg.epnoi.matching.metrics.utils.{PdfToText, SparkWrapper}
 
 /**
  * Created by cbadenes on 24/04/15.

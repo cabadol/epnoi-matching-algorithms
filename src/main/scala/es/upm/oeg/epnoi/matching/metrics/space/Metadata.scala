@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.model.item
+package es.upm.oeg.epnoi.matching.metrics.space
 
 /**
  * Information about a resource

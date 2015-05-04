@@ -2,7 +2,7 @@ package es.upm.oeg.epnoi.matching.metrics.corpus
 
 import es.upm.oeg.epnoi.matching.metrics.feature.LuceneTokenizer
 import es.upm.oeg.epnoi.matching.metrics.model._
-import es.upm.oeg.epnoi.matching.metrics.model.item.{Metadata, Resource}
+import es.upm.oeg.epnoi.matching.metrics.space.{Metadata, Resource}
 import es.upm.oeg.epnoi.matching.metrics.utils.SparkWrapper
 
 /**
@@ -10,7 +10,7 @@ import es.upm.oeg.epnoi.matching.metrics.utils.SparkWrapper
  */
 case object Articles {
 
-  val corpus = SparkWrapper.readCorpus("src/test/corpus/articles").map{x=>
+  val corpus = SparkWrapper.readCorpus("src/test/corpus/articles/*.txt").map{x=>
     val name = x._1.substring(x._1.lastIndexOf("/")+1)
     Resource(
       uri         = s"ro.oeg.es/resource/$name",

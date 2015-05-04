@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.feature
 
-import es.upm.oeg.epnoi.matching.metrics.model.item.Vocabulary
+import es.upm.oeg.epnoi.matching.metrics.space.Vocabulary
 import org.apache.spark.mllib.linalg.{Vector, Vectors}
 
 import scala.collection.mutable

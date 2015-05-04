@@ -1,14 +1,14 @@
-package es.upm.oeg.epnoi.matching.metrics.model.item
+package es.upm.oeg.epnoi.matching.metrics.space
 
 import org.apache.spark.rdd.RDD
 
 /**
- * Words used in the corpus
- * @param bagOfWords
+ * Unique list of words
+ * @param tokens
  */
-class Vocabulary (bagOfWords: RDD[String]) extends Serializable{
+class Vocabulary (tokens: RDD[String]) extends Serializable{
 
-  val words = bagOfWords.distinct
+  val words = tokens.distinct
 
   // Map term -> term index
   private val wordsIndex: collection.Map[String, Long] = words.zipWithIndex.collectAsMap()

@@ -1,7 +1,7 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
 import es.upm.oeg.epnoi.matching.metrics.aggregation.Bernoulli
-import es.upm.oeg.epnoi.matching.metrics.model.item.Author
+import es.upm.oeg.epnoi.matching.metrics.space.Author
 
 /**
  * Created by cbadenes on 23/04/15.

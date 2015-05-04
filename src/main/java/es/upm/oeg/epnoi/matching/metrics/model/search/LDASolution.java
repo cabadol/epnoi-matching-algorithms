@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.heuristic;
+package es.upm.oeg.epnoi.matching.metrics.model.search;
 
 import org.uma.jmetal.solution.DoubleSolution;
 
@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public class LDAParameters implements DoubleSolution {
+public class LDASolution implements DoubleSolution {
 
     private enum Variable{
         TOPICS(0), ALPHA(1), BETA(2);
@@ -63,7 +63,7 @@ public class LDAParameters implements DoubleSolution {
     Integer numberOfViolatedConstraints = 0;
 
 
-    public LDAParameters(Integer numTopics, Double alpha, Double beta, Integer maxIterations, Integer maxTopics) {
+    public LDASolution(Integer numTopics, Double alpha, Double beta, Integer maxIterations, Integer maxTopics) {
         setNumTopics(numTopics);
         setAlpha(alpha);
         setBeta(beta);
@@ -75,7 +75,7 @@ public class LDAParameters implements DoubleSolution {
         return maxIterations;
     }
 
-    public LDAParameters setMaxIterations( Integer maxIterations){
+    public LDASolution setMaxIterations( Integer maxIterations){
         this.maxIterations = maxIterations;
         return this;
     }
@@ -84,7 +84,7 @@ public class LDAParameters implements DoubleSolution {
         return maxTopics;
     }
 
-    public LDAParameters setMaxTopics(Integer maxTopics){
+    public LDASolution setMaxTopics(Integer maxTopics){
         this.maxTopics = maxTopics;
         return this;
     }
@@ -93,7 +93,7 @@ public class LDAParameters implements DoubleSolution {
         return getTopics()>minTopics && getAlpha() > minAlpha && getBeta() > minBeta;
     }
 
-    public LDAParameters setLoglikelihood (Double value){
+    public LDASolution setLoglikelihood (Double value){
         setObjective(Objetive.LOGLIKELIHOOD.id,value);
         return this;
     }
@@ -102,7 +102,7 @@ public class LDAParameters implements DoubleSolution {
         return objetives.get(Objetive.LOGLIKELIHOOD.id);
     }
 
-    public LDAParameters setLogprior (Double value){
+    public LDASolution setLogprior (Double value){
         setObjective(Objetive.LOGPRIOR.id,value);
         return this;
     }
@@ -111,7 +111,7 @@ public class LDAParameters implements DoubleSolution {
         return objetives.get(Objetive.LOGPRIOR.id);
     }
 
-    public LDAParameters setTopicsObj (Double value){
+    public LDASolution setTopicsObj (Double value){
         setObjective(Objetive.TOPICS.id,value);
         return this;
     }
@@ -210,8 +210,8 @@ public class LDAParameters implements DoubleSolution {
     }
 
     @Override
-    public LDAParameters copy() {
-        LDAParameters clone = new LDAParameters(getTopics(),getAlpha(),getBeta(),maxIterations,maxTopics);
+    public LDASolution copy() {
+        LDASolution clone = new LDASolution(getTopics(),getAlpha(),getBeta(),maxIterations,maxTopics);
 
         // Objetives
         Iterator<Integer> it = objetives.keySet().iterator();

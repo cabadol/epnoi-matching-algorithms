@@ -1,7 +1,7 @@
 package es.upm.oeg.epnoi.matching.metrics.corpus
 
 import es.upm.oeg.epnoi.matching.metrics.model.Authors
-import es.upm.oeg.epnoi.matching.metrics.model.item.{Metadata, Resource}
+import es.upm.oeg.epnoi.matching.metrics.space.{Metadata, Resource}
 import es.upm.oeg.epnoi.matching.metrics.utils.SparkWrapper
 
 

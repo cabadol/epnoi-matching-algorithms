@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.model
 
-import es.upm.oeg.epnoi.matching.metrics.model.item.Author
+import es.upm.oeg.epnoi.matching.metrics.space.Author
 
 /**
  * Created by cbadenes on 24/04/15.

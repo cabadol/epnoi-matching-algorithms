@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
-import es.upm.oeg.epnoi.matching.metrics.model.item.SemanticResource
+import es.upm.oeg.epnoi.matching.metrics.space.SemanticResource
 import org.apache.spark.rdd.RDD
 
 /**
@@ -27,7 +27,7 @@ object ROSimilarity {
    * @return RDD[(SemanticResource,Iterable[(SemanticResource,SemanticResource,Double)])]
    */
   def cross(semanticResources: RDD[SemanticResource]): RDD[(SemanticResource,Iterable[(SemanticResource,SemanticResource,Double)])]={
-    // No sort result because fail on equals over case class (Array[Double])
+    // TODO groupBy fail by Array[Double] of TopicDistribution case class
     semanticResources.cartesian(semanticResources).map{case(sr1,sr2)=>(sr1,sr2,apply(sr1,sr2))}.groupBy(_._1)
   }
 

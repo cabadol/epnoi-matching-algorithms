@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.model.item
+package es.upm.oeg.epnoi.matching.metrics.space
 
 /**
  * Relevant data to interpreting and preserving the results of scientific investigations (e.g. publications,
@@ -10,5 +10,10 @@ package es.upm.oeg.epnoi.matching.metrics.model.item
  * @param resources
  */
 case class Resource (uri: String, url: String, metadata: Metadata, words: Option[Seq[String]], resources: Option[Seq[Resource]]) extends Serializable{
+
+  val bagOfWords = words match{
+    case None => Seq.empty
+    case Some(w) => w
+  }
 
 }

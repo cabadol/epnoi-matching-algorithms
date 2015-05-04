@@ -1,24 +1,21 @@
-package es.upm.oeg.epnoi.matching.metrics.heuristic;
+package es.upm.oeg.epnoi.matching.metrics.model.search;
 
 import org.uma.jmetal.algorithm.multiobjective.nsgaiii.NSGAIII;
 import org.uma.jmetal.algorithm.multiobjective.nsgaiii.NSGAIIIBuilder;
 import org.uma.jmetal.operator.impl.crossover.SBXCrossover;
 import org.uma.jmetal.operator.impl.mutation.PolynomialMutation;
 import org.uma.jmetal.operator.impl.selection.BinaryTournamentSelection;
-import org.uma.jmetal.operator.impl.selection.NaryTournamentSelection;
+import org.uma.jmetal.problem.Problem;
 import org.uma.jmetal.solution.Solution;
 import org.uma.jmetal.util.AlgorithmRunner;
-import org.uma.jmetal.util.comparator.DominanceComparator;
 
 /**
  * Created by cbadenes on 30/04/15.
  */
-public class LDAOptimizer {
+public class NSGAExecutor {
 
-    public static LDAParameters search(Long size, Evaluation function, Integer maxEvaluations){
-        System.out.println("Learning parameters...");
-        // Try to search best parameters for a LDA problem
-        LDATopicsProblem problem = new LDATopicsProblem(size, function);
+    public static LDASolution search(Problem problem, Integer maxEvaluations){
+        System.out.println("Executing NSGA ...");
 
         // Crossover
         Double crossoverProbability        = 0.9 ;
@@ -49,7 +46,7 @@ public class LDAOptimizer {
         Solution result = algorithm.getResult().get(0);
         Long computingTime = algorithmRunner.getComputingTime() ;
         System.out.println("Total execution time: "+ computingTime +"ms");
-        return (LDAParameters) result;
+        return (LDASolution) result;
     }
 
 }

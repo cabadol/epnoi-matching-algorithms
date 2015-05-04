@@ -1,7 +1,10 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
 import es.upm.oeg.epnoi.matching.metrics.corpus._
-import es.upm.oeg.epnoi.matching.metrics.model.space.{RepresentationalSpace, SemanticSpace}
+import es.upm.oeg.epnoi.matching.metrics.model.LDASettings
+import es.upm.oeg.epnoi.matching.metrics.space.{ConceptualResource, ConceptSpace, WordSpace, TopicSpace}
+import org.apache.spark.mllib.feature.HashingTF
+import org.apache.spark.rdd.RDD
 
 /**
  * Created by cbadenes on 20/04/15.
@@ -12,17 +15,29 @@ object ROSimilarityExample {
 
     val start = System.currentTimeMillis
 
-    // Representational Space
-    val representationalSpace = new RepresentationalSpace(Articles.corpus)
+    // Conceptual resources
+    val conceptualResources = Articles.corpus.map(ConceptualResource(_))
 
-    // Semantic Space
-    val semanticSpace: SemanticSpace = new SemanticSpace(representationalSpace)
+    // Concept Space
+    val conceptSpace = new ConceptSpace(conceptualResources)
 
-    // Research Object Similarity
-    ROSimilarity.cross(semanticSpace.semanticResources).foreach { case (semanticResource, semanticResourceTuples) =>
-      println(s"ro_sim[${semanticResource.resource.uri}]:")
+    // OPTIMIZATION: Search best parameters (topics, alpha and beta) for LDA process
+    LDASettings.adjust(conceptSpace.featureVectors)
+
+    // Topic Space
+    val topicSpace: TopicSpace = new TopicSpace(conceptSpace)
+
+    // Semantic Resources
+    val semanticResources = topicSpace.semanticResources
+
+    // Similarity matrix
+    val matrix = ROSimilarity.cross(semanticResources)
+
+    // Print Resources Similarity Matrix
+    matrix.foreach { case (semanticResource, semanticResourceTuples) =>
+      println(s"ro_sim[${semanticResource.conceptualResource.resource.uri}]:")
       semanticResourceTuples.toSeq.sortBy(x=>1-x._3).foreach{ case(sr1,sr2,sim) =>
-        println(s"\t${sr2.resource.uri.concat(" "*(45-sr2.resource.uri.length))}\t${sim}")
+        println(s"\t${sr2.conceptualResource.resource.uri.concat(" "*(45-sr2.conceptualResource.resource.uri.length))}\t${sim}")
       }
     }
 

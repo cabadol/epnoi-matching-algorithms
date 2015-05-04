@@ -1,7 +1,7 @@
-package es.upm.oeg.epnoi.matching.metrics.model.item
+package es.upm.oeg.epnoi.matching.metrics.space
 
 /**
- *
+ * Digital signature of an author
  * @param orcid
  * @param dblpId
  * @param adsId
