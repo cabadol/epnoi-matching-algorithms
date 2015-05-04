@@ -13,15 +13,15 @@ import org.apache.spark.rdd.RDD
  */
 case class ConceptSpace (conceptualResources: RDD[ConceptualResource]) extends Serializable {
 
-  // List of terms
-  val vocabulary = new Vocabulary(conceptualResources.flatMap(_.bagOfTerms))
+  // List of concepts
+  val vocabulary = new Vocabulary(conceptualResources.flatMap(_.bagOfConcepts))
 
   // List of conceptual resources indexed
   val indexes = conceptualResources.zipWithIndex.map{case (value,key) => (key,value)}
 
   // Term-Frequency Vectors using vocabulary as index
   def featureVectors = indexes.map{case (key,conceptualResource)=>
-    val counter: Vector = conceptualResource.terms match{
+    val counter: Vector = conceptualResource.concepts match{
       case None => Vectors.sparse(vocabulary.size, Seq.empty)
       case Some(terms) => WordCounter.count(terms, vocabulary)
     }
