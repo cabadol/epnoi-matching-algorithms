@@ -1,8 +1,8 @@
 package es.upm.oeg.epnoi.matching.metrics.corpus
 
 import es.upm.oeg.epnoi.matching.metrics.feature.LuceneTokenizer
-import es.upm.oeg.epnoi.matching.metrics.model._
-import es.upm.oeg.epnoi.matching.metrics.space.{Metadata, Resource}
+import es.upm.oeg.epnoi.matching.metrics.topics._
+import es.upm.oeg.epnoi.matching.metrics.domain.{Metadata, Resource}
 import es.upm.oeg.epnoi.matching.metrics.utils.SparkWrapper
 
 /**

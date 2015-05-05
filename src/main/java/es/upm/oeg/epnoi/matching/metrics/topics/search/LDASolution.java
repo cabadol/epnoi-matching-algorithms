@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.model.search;
+package es.upm.oeg.epnoi.matching.metrics.topics.search;
 
 import org.uma.jmetal.solution.DoubleSolution;
 

@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.space
+package es.upm.oeg.epnoi.matching.metrics.domain
 
 /**
  * Relevant data to interpreting and preserving the results of scientific investigations (e.g. publications,

@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.model.search
+package es.upm.oeg.epnoi.matching.metrics.topics.search
 
 import org.apache.commons.math3.distribution.NormalDistribution
 import org.apache.spark.mllib.clustering.LDA

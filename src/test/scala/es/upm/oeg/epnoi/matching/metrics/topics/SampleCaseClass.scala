@@ -1,6 +1,6 @@
-package es.upm.oeg.epnoi.matching.metrics.model
+package es.upm.oeg.epnoi.matching.metrics.topics
 
-import es.upm.oeg.epnoi.matching.metrics.space.TopicDistribution
+import es.upm.oeg.epnoi.matching.metrics.domain.TopicDistribution
 
 /**
  * Created by cbadenes on 04/05/15.

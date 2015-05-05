@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.model
+package es.upm.oeg.epnoi.matching.metrics.topics
 
 import org.apache.spark.mllib.clustering.{DistributedLDAModel, LDA}
 import org.apache.spark.mllib.linalg.Vector

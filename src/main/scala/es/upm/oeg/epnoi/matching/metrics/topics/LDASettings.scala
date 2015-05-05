@@ -1,6 +1,6 @@
-package es.upm.oeg.epnoi.matching.metrics.model
+package es.upm.oeg.epnoi.matching.metrics.topics
 
-import es.upm.oeg.epnoi.matching.metrics.model.search.{LDAProblem, NSGAExecutor}
+import es.upm.oeg.epnoi.matching.metrics.topics.search.{LDAProblem, NSGAExecutor}
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.rdd.RDD
 

@@ -1,8 +1,8 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
 import es.upm.oeg.epnoi.matching.metrics.corpus._
-import es.upm.oeg.epnoi.matching.metrics.model.LDASettings
-import es.upm.oeg.epnoi.matching.metrics.space.{ConceptualResource, ConceptSpace, WordSpace, TopicSpace}
+import es.upm.oeg.epnoi.matching.metrics.topics.LDASettings
+import es.upm.oeg.epnoi.matching.metrics.domain.{ConceptualResource, ConceptSpace, WordSpace, TopicSpace}
 import org.apache.spark.mllib.feature.HashingTF
 import org.apache.spark.rdd.RDD
 
