@@ -1,16 +1,16 @@
 package es.upm.oeg.epnoi.matching.metrics.domain
 
 /**
- *
+ * Map topics distribution and metadata
  * @param author
+ * @param publications
  */
-case class Profile (author: Author, publications: Map[Metadata,TopicDistribution])  extends Serializable {
+case class AuthorProfile (author: Author, publications: Map[Metadata,TopicDistribution])  extends Serializable {
 
-  def +(profile: Profile): Profile ={
-    if (author != profile.author) throw new IllegalArgumentException(s"Authors are different: ${author.uri} and ${profile.author.uri}")
-    Profile(author, publications ++ profile.publications)
+  def +(authorProfile: AuthorProfile): AuthorProfile ={
+    if (author != authorProfile.author) throw new IllegalArgumentException(s"Authors are different: ${author.uri} and ${authorProfile.author.uri}")
+    AuthorProfile(author, publications ++ authorProfile.publications)
   }
-
 
   /**
    * Accumulative Topic Distribution based on publications

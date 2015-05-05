@@ -31,7 +31,8 @@ object ROSimilarityExample {
     val semanticResources = topicSpace.semanticResources
 
     // Similarity matrix
-    val matrix = ROSimilarity.cross(semanticResources)
+
+    val matrix = topicSpace.cross(semanticResources)
 
     val resourceSize = conceptualResources.count
     val matrixSize = matrix.count

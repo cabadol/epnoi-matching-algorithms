@@ -19,20 +19,16 @@ object AuthorsProfileExample {
     // Topic Space
     val topicSpace: TopicSpace = new TopicSpace(conceptSpace)
 
-    // Print profiles
-    topicSpace.profiles.foreach{ profile =>
-      println(s"Profile: $profile")
+    // Print similarities between author profiles
+    topicSpace.authorProfiles.foreach{ ap1 =>
+      println(s"Author Profile: $ap1")
+      topicSpace.authorProfiles.foreach{ ap2 =>
+        println(s"\t${ap2.author.uri}\t${AuthorsSimilarity(ap1,ap2)}")
+      }
     }
-
-    // Similarity between authors profile
-
-    topicSpace.profiles.cartesian(topicSpace.profiles).foreach{ case (p1,p2) =>
-      println(s"${p1.author.uri} <=> ${p2.author.uri}:\t${AuthorsSimilarity(p1,p2)}")
-    }
-
 
     println("-"*20+" Global Author Similarity:")
-    println(AuthorsSimilarity(topicSpace.profiles,topicSpace.profiles))
+    println(AuthorsSimilarity(topicSpace.authorProfiles,topicSpace.authorProfiles))
 
   }
 

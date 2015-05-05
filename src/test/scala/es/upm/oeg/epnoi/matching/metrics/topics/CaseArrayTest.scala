@@ -1,8 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.topics
 
-import es.upm.oeg.epnoi.matching.metrics.corpus.{Code, Articles}
-import es.upm.oeg.epnoi.matching.metrics.similarity.ROSimilarity
-import es.upm.oeg.epnoi.matching.metrics.domain.{SemanticResource, ConceptualResource, TopicDistribution}
+import es.upm.oeg.epnoi.matching.metrics.domain.TopicDistribution
 import es.upm.oeg.epnoi.matching.metrics.utils.SparkWrapper
 import org.junit.runner.RunWith
 import org.scalatest.FunSuite
