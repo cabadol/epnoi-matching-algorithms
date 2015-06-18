@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.topics
 
-import es.upm.oeg.epnoi.matching.metrics.domain.Author
+import es.upm.oeg.epnoi.matching.metrics.domain.entity.Author
 
 /**
  * Created by cbadenes on 24/04/15.

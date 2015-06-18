@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
-import es.upm.oeg.epnoi.matching.metrics.domain.TopicDistribution
+import es.upm.oeg.epnoi.matching.metrics.domain.entity.TopicDistribution
 
 /**
  * Created by cbadenes on 22/04/15.

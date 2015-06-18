@@ -12,7 +12,6 @@ object CosineSimilarity {
     val sum = p.zip(q).map(x=>(x._1*x._2, Math.pow(x._1,2), Math.pow(x._2,2))).reduce((x,y)=>(x._1+y._1, x._2+y._2, x._3+y._3))
     sum._1/(Math.sqrt(sum._2)*Math.sqrt(sum._3))
 
-
   }
 
 }

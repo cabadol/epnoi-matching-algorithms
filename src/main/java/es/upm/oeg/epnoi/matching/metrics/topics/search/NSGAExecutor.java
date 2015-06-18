@@ -5,9 +5,11 @@ import org.uma.jmetal.algorithm.multiobjective.nsgaiii.NSGAIIIBuilder;
 import org.uma.jmetal.operator.impl.crossover.SBXCrossover;
 import org.uma.jmetal.operator.impl.mutation.PolynomialMutation;
 import org.uma.jmetal.operator.impl.selection.BinaryTournamentSelection;
+import org.uma.jmetal.operator.impl.selection.NaryTournamentSelection;
 import org.uma.jmetal.problem.Problem;
 import org.uma.jmetal.solution.Solution;
 import org.uma.jmetal.util.AlgorithmRunner;
+import org.uma.jmetal.util.comparator.DominanceComparator;
 
 /**
  * Created by cbadenes on 30/04/15.
@@ -24,12 +26,12 @@ public class NSGAExecutor {
 
         // Mutation
         Double mutationDistributionIndex   = 20.0 ;
-        Double mutationProbability  = 1.0 / problem.getNumberOfVariables() ;
+        Double mutationProbability  = 0.2 / problem.getNumberOfVariables() ;
         PolynomialMutation mutation = new PolynomialMutation(mutationProbability, mutationDistributionIndex) ;
 
         // Selection
-        BinaryTournamentSelection selection = new BinaryTournamentSelection();
-//        NaryTournamentSelection selection = new NaryTournamentSelection(3,new DominanceComparator());
+        //BinaryTournamentSelection selection = new BinaryTournamentSelection();
+        NaryTournamentSelection selection = new NaryTournamentSelection(10,new DominanceComparator());
 
         // NSGAIII algorithm
         Integer divisions                   = 12;

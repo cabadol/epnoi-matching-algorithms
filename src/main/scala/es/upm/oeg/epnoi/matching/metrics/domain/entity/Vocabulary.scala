@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.domain
+package es.upm.oeg.epnoi.matching.metrics.domain.entity
 
 import org.apache.spark.rdd.RDD
 
@@ -10,10 +10,10 @@ class Vocabulary (tokens: RDD[String]) extends Serializable{
 
   val words = tokens.distinct
 
-  // Map term -> term index
-  private val wordsIndex: collection.Map[String, Long] = words.zipWithIndex.collectAsMap()
+  // Map [term] -> [term ,index]
+  private val wordsMap: collection.Map[String, Long] = words.zipWithIndex.collectAsMap()
 
-  val size = wordsIndex.size
+  val size = wordsMap.size
 
 
   /**
@@ -22,7 +22,7 @@ class Vocabulary (tokens: RDD[String]) extends Serializable{
    * @return
    */
   def contains (word: String): Boolean ={
-    wordsIndex.contains(word)
+    wordsMap.contains(word)
   }
 
   /**
@@ -31,7 +31,7 @@ class Vocabulary (tokens: RDD[String]) extends Serializable{
    * @return
    */
   def key(word: String): Long ={
-    wordsIndex(word)
+    wordsMap(word)
   }
 
 }

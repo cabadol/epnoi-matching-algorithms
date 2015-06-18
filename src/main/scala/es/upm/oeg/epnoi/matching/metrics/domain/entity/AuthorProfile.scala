@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.domain
+package es.upm.oeg.epnoi.matching.metrics.domain.entity
 
 /**
  * Map topics distribution and metadata

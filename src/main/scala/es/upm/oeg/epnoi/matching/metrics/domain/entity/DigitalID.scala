@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.domain
+package es.upm.oeg.epnoi.matching.metrics.domain.entity
 
 /**
  * Digital signature of an author

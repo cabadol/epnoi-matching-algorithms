@@ -1,7 +1,8 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
 import es.upm.oeg.epnoi.matching.metrics.corpus._
-import es.upm.oeg.epnoi.matching.metrics.domain.{ConceptSpace, ConceptualResource, TopicSpace}
+import es.upm.oeg.epnoi.matching.metrics.domain.entity.ConceptualResource
+import es.upm.oeg.epnoi.matching.metrics.domain.space.{ConceptsSpace, TopicsSpace}
 
 /**
  * Created by cbadenes on 20/04/15.
@@ -14,10 +15,10 @@ object AuthorsProfileExample {
     val conceptualResources = Code.corpus.map(ConceptualResource(_))
 
     // Concept Space
-    val conceptSpace = new ConceptSpace(conceptualResources)
+    val conceptSpace = new ConceptsSpace(conceptualResources)
 
     // Topic Space
-    val topicSpace: TopicSpace = new TopicSpace(conceptSpace)
+    val topicSpace: TopicsSpace = new TopicsSpace(conceptSpace)
 
     // Print similarities between author profiles
     topicSpace.authorProfiles.foreach{ ap1 =>

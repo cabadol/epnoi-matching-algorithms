@@ -9,7 +9,7 @@ import org.uma.jmetal.problem.Problem
 import scala.util.Random
 
 
-class LDAProblem(domain: RDD[(Long, Vector)]) extends Problem[LDASolution]{
+class LDAProblem(domain: RDD[(Long, Vector)], iterations: Integer) extends Problem[LDASolution]{
 
   val randomGen = new Random()
 
@@ -23,13 +23,13 @@ class LDAProblem(domain: RDD[(Long, Vector)]) extends Problem[LDASolution]{
 
   val domainSize = domain.count
 
-  val topicDist = new NormalDistribution(Math.sqrt(domainSize/2).toInt,2) // Normal distribution around Rule of Thumb
+  val topicDist = new NormalDistribution(Math.sqrt(domainSize/2).toInt,2) // Normal distribution around rule of thumb
 
   def evaluate(solution: LDASolution) ={
 
     val model = new LDA().
       setK(solution.getTopics).
-      setMaxIterations(solution.getMaxIterations).
+      setMaxIterations(iterations).
       setDocConcentration(solution.getAlpha).
       setTopicConcentration(solution.getBeta).
       run(domain)
@@ -45,19 +45,15 @@ class LDAProblem(domain: RDD[(Long, Vector)]) extends Problem[LDASolution]{
     solution.setLogprior(Math.abs(model.logPrior))
     // Objetive3 :: Minimize the inverse of Normal Distribution with mean in the Rule of Thumb => Maximize number of cluster close to Rule of Thumb
     solution.setTopicsObj( 1 - topicDist.density(model.k))
+//    solution.setTopicsObj(1.0)
   }
 
   def getNumberOfVariables = 3
 
   def randomTopics() ={
-    if (randomGen.nextBoolean()){
-      // Rule of thumb
-      Math.sqrt(domainSize/2).toInt
-    } else {
-      val random = randomGen.nextInt(domainSize.toInt+1)
-      if (random < LDASolution.minTopics) domainSize.toInt
-      else random
-    }
+    val random = randomGen.nextInt(domainSize.toInt+1)
+    if (random < LDASolution.minTopics) domainSize.toInt else random
+
   }
 
   def randomConcentration(min: Double, max: Double) ={

@@ -1,10 +1,9 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
 import es.upm.oeg.epnoi.matching.metrics.corpus._
+import es.upm.oeg.epnoi.matching.metrics.domain.entity.ConceptualResource
+import es.upm.oeg.epnoi.matching.metrics.domain.space.{ConceptsSpace, TopicsSpace}
 import es.upm.oeg.epnoi.matching.metrics.topics.LDASettings
-import es.upm.oeg.epnoi.matching.metrics.domain.{ConceptualResource, ConceptSpace, WordSpace, TopicSpace}
-import org.apache.spark.mllib.feature.HashingTF
-import org.apache.spark.rdd.RDD
 
 /**
  * Created by cbadenes on 20/04/15.
@@ -19,16 +18,16 @@ object ROSimilarityExample {
     val conceptualResources = Articles.corpus.map(ConceptualResource(_))
 
     // Concept Space
-    val conceptSpace = new ConceptSpace(conceptualResources)
+    val conceptSpace = new ConceptsSpace(conceptualResources)
 
     // OPTIMIZATION: Search best parameters (topics, alpha and beta) for LDA process
-    //LDASettings.adjust(conceptSpace.featureVectors)
+    LDASettings.learn(conceptSpace.featureVectors, maxEvaluations = 400, ldaIterations = 10)
 
     // Topic Space
-    val topicSpace: TopicSpace = new TopicSpace(conceptSpace)
+    val topicSpace: TopicsSpace = new TopicsSpace(conceptSpace)
 
     // Semantic Resources
-    val semanticResources = topicSpace.semanticResources
+    val semanticResources = topicSpace.topicalResources
 
     // Similarity matrix
 

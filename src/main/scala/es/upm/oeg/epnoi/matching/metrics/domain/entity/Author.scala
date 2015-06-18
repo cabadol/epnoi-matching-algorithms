@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics.domain
+package es.upm.oeg.epnoi.matching.metrics.domain.entity
 
 /**
  * An entity primarily responsible for making the resource.

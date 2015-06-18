@@ -9,8 +9,12 @@ object LDASettings {
 
   var topics: Integer = 4
 
+  // Hyper-parameter for prior over documents’ distributions over topics.
+  // Currently must be > 1, where larger values encourage smoother inferred distributions.
   var alpha: Double = 13.5
 
+  // Hyper-parameter for prior over topics’ distributions over terms (words).
+  // Currently must be > 1, where larger values encourage smoother inferred distributions.
   var beta: Double = 1.1
 
   var maxIterations = 200
@@ -22,11 +26,10 @@ object LDASettings {
   /**
    * Learn best configuration using a Genetic Algorithm
    * @param featureVectors
+   * @param maxEvaluations
    */
-  def adjust(featureVectors: RDD[(Long, Vector)]): Unit ={
-    val problem = new LDAProblem(featureVectors);
-    val maxEvaluations = featureVectors.count()*2 // TODO set boundaries
-    val solution = NSGAExecutor.search(problem,maxEvaluations.toInt)
+  def learn(featureVectors: RDD[(Long, Vector)], maxEvaluations: Integer, ldaIterations: Integer): Unit ={
+    val solution = NSGAExecutor.search(new LDAProblem(featureVectors, ldaIterations),maxEvaluations)
     topics = solution.getTopics
     alpha = solution.getAlpha
     beta = solution.getBeta

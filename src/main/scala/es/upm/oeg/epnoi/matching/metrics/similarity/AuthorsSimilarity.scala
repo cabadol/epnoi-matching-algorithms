@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.similarity
 
-import es.upm.oeg.epnoi.matching.metrics.domain.{Author, AuthorProfile}
+import es.upm.oeg.epnoi.matching.metrics.domain.entity.AuthorProfile
 import org.apache.spark.rdd.RDD
 
 /**

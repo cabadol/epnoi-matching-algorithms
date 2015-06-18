@@ -1,7 +1,7 @@
 package es.upm.oeg.epnoi.matching.metrics.corpus
 
+import es.upm.oeg.epnoi.matching.metrics.domain.entity.{Author, Metadata, RegularResource}
 import es.upm.oeg.epnoi.matching.metrics.feature.LuceneTokenizer
-import es.upm.oeg.epnoi.matching.metrics.domain.{Author, Metadata, Resource}
 import es.upm.oeg.epnoi.matching.metrics.utils.{PdfToText, SparkWrapper}
 
 /**
@@ -18,7 +18,7 @@ case object Oaipmh {
 
 
   // Research Object 1
-  val ro1: Resource = Resource(
+  val ro1: RegularResource = RegularResource(
     uri = "ro.oeg.es/resource/science/00001",
     url = "src/test/corpus/oaipmh/r01.pdf",
     metadata = Metadata("Discovery of the antigraviton verified by the rotation curve of NGC 6503", "2014", Some(List(a1, a2, a3, a4))),
@@ -26,7 +26,7 @@ case object Oaipmh {
     resources = None)
 
   // Research Object 2
-  val ro2: Resource = Resource(
+  val ro2: RegularResource = RegularResource(
     uri = "ro.oeg.es/resource/science/00002",
     url = "src/test/corpus/oaipmh/r02.pdf",
     metadata = Metadata("Black hole Cosmos and the Micro Cosmos", "2013", Some(List(a5, a6))),
