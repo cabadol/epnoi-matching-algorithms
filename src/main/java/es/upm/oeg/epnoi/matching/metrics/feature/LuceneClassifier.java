@@ -1,4 +1,4 @@
-package es.upm.oeg.epnoi.matching.metrics;
+package es.upm.oeg.epnoi.matching.metrics.feature;
 
 /**
  * Created by cbadenes on 22/04/15.

@@ -9,24 +9,16 @@ import org.apache.spark.mllib.linalg.{Vector, Vectors}
  */
 case class ConceptualResource (resource: RegularResource) extends Serializable{
 
-  val concepts = resource.words match{
-    case None => None
-    case Some(words) => Some(Concepts(words))
-  }
-
-  def bagOfConcepts = concepts match{
-    case None => Seq.empty
-    case Some(w) => w
-  }
+  def bagOfConcepts = resource.bagOfWords //actually not conceptualization
 
   /**
    * Frequency Vector
    * @param vocabulary
    * @return
    */
-  def featureVector (vocabulary: Vocabulary): Vector = concepts match{
-    case None => Vectors.sparse(vocabulary.size, Seq.empty)
-    case Some(concepts) => WordCounter.count(concepts, vocabulary)
+  def featureVector (vocabulary: Vocabulary): Vector = bagOfConcepts match{
+    case Seq() => Vectors.sparse(vocabulary.size, Seq.empty)
+    case concepts => WordCounter.count(concepts, vocabulary)
   }
 
 }

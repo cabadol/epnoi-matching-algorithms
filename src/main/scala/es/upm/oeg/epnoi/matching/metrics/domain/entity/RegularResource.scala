@@ -9,15 +9,9 @@ import org.apache.spark.mllib.linalg.{Vectors, Vector}
  * @param uri (uniform resource identifier) string of characters used to identify a resource
  * @param url (uniform resource locator) location of the resource on the system
  * @param metadata
- * @param words
  * @param resources
  */
-case class RegularResource (uri: String, url: String, metadata: Metadata, words: Option[Seq[String]], resources: Option[Seq[RegularResource]]) extends Serializable{
-
-  val bagOfWords = words match{
-    case None => Seq.empty
-    case Some(w) => w
-  }
+case class RegularResource (uri: String, url: String, metadata: Metadata, bagOfWords: Seq[String], resources: Seq[RegularResource]) extends Serializable{
 
   /**
    * Feature Vector as Frequency Vector. When aggregated resources, it is the vectorial sum of the aggregated feature vectors
@@ -25,13 +19,13 @@ case class RegularResource (uri: String, url: String, metadata: Metadata, words:
    * @return
    */
   def featureVector (vocabulary: Vocabulary): Vector = resources match{
-    case None => partialFeatureVector(vocabulary)
-    case Some(resources) => resources.map(x=>x.featureVector(vocabulary)).reduce((v1,v2)=>v1) // nested vectorial sum
+    case Seq() => partialFeatureVector(vocabulary)
+    case resources => resources.map(x=>x.featureVector(vocabulary)).reduce((v1,v2)=>v1) // nested vectorial sum
   }
 
-  private def partialFeatureVector (vocabulary: Vocabulary): Vector = words match{
-    case None => Vectors.sparse(vocabulary.size, Seq.empty)
-    case Some(words) => WordCounter.count(words, vocabulary)
+  private def partialFeatureVector (vocabulary: Vocabulary): Vector = bagOfWords match{
+    case Seq() => Vectors.sparse(vocabulary.size, Seq.empty)
+    case words => WordCounter.count(words, vocabulary)
   }
 
 

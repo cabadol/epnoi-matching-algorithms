@@ -1,5 +1,7 @@
 package es.upm.oeg.epnoi.matching.metrics.topics.search;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.uma.jmetal.algorithm.multiobjective.nsgaiii.NSGAIII;
 import org.uma.jmetal.algorithm.multiobjective.nsgaiii.NSGAIIIBuilder;
 import org.uma.jmetal.operator.impl.crossover.SBXCrossover;
@@ -16,8 +18,10 @@ import org.uma.jmetal.util.comparator.DominanceComparator;
  */
 public class NSGAExecutor {
 
+    private static final Logger log = LoggerFactory.getLogger(NSGAExecutor.class);
+
     public static LDASolution search(Problem problem, Integer maxEvaluations){
-        System.out.println("Executing NSGA ...");
+        log.info("Executing NSGA: maxEvaluations=" + maxEvaluations);
 
         // Crossover
         Double crossoverProbability        = 0.9 ;
@@ -30,11 +34,12 @@ public class NSGAExecutor {
         PolynomialMutation mutation = new PolynomialMutation(mutationProbability, mutationDistributionIndex) ;
 
         // Selection
-        //BinaryTournamentSelection selection = new BinaryTournamentSelection();
-        NaryTournamentSelection selection = new NaryTournamentSelection(10,new DominanceComparator());
+//        BinaryTournamentSelection selection = new BinaryTournamentSelection();
+//        NaryTournamentSelection selection = new NaryTournamentSelection(10,new DominanceComparator());
+        NaryTournamentSelection selection = new NaryTournamentSelection();
 
         // NSGAIII algorithm
-        Integer divisions                   = 12;
+        Integer divisions                   = 12; //12
         NSGAIII algorithm  = new NSGAIIIBuilder(problem)
                 .setCrossoverOperator(crossover)
                 .setMutationOperator(mutation)
@@ -44,10 +49,11 @@ public class NSGAExecutor {
                 .build() ;
 
 
+        log.info("NSGA-III Algorithm ready: " + algorithm);
         AlgorithmRunner algorithmRunner = new AlgorithmRunner.Executor(algorithm).execute() ;
         Solution result = algorithm.getResult().get(0);
         Long computingTime = algorithmRunner.getComputingTime() ;
-        System.out.println("Total execution time: "+ computingTime +"ms");
+        log.info("NSGA Execution time: "+ computingTime +"ms");
         return (LDASolution) result;
     }
 

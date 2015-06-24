@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.utils
 
-import org.apache.log4j.{Level, Logger}
+import org.apache.log4j.{ConsoleAppender, Level, Logger}
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -13,7 +13,9 @@ object SparkWrapper {
 
   val sc = new SparkContext(conf)
 
-  Logger.getRootLogger.setLevel(Level.WARN)
+  //Logger.getRootLogger.setLevel(Level.INFO)
+
+
 
   def readCorpus (directory: String): RDD[(String,String)] = {
     sc.wholeTextFiles(directory)

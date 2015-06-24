@@ -26,7 +26,7 @@ public class LDASolution implements DoubleSolution {
     }
 
     private enum Objetive{
-        LOGLIKELIHOOD(0), LOGPRIOR(1), TOPICS(2);
+        LOGLIKELIHOOD(0), LOGPRIOR(1), TOPICS(2), DISTRIBUTION(3);
 
         public int id;
         Objetive(int id) {
@@ -37,6 +37,7 @@ public class LDASolution implements DoubleSolution {
             if (id==0) return LOGLIKELIHOOD;
             if (id==1) return LOGPRIOR;
             if (id==2) return TOPICS;
+            if (id==3) return DISTRIBUTION;
             throw new RuntimeException();
         }
     }
@@ -47,9 +48,9 @@ public class LDASolution implements DoubleSolution {
     public static final Double minTopics = 1.0;
 
     public static final Double maxAlpha = 20.0;
-    public static final Double minAlpha = 1.1;
+    public static final Double minAlpha = 5.1;
 
-    public static final Double maxBeta = 20.0;
+    public static final Double maxBeta = 5.0;
     public static final Double minBeta = 1.1;
 
     Map<Integer,Double> objetives = new HashMap<>();
@@ -102,6 +103,17 @@ public class LDASolution implements DoubleSolution {
         return objetives.get(Objetive.LOGLIKELIHOOD.id);
     }
 
+
+    public LDASolution setDistribution (Double value){
+        setObjective(Objetive.DISTRIBUTION.id,value);
+        return this;
+    }
+
+    public Double getDistribution(){
+        return objetives.get(Objetive.DISTRIBUTION.id);
+    }
+
+
     public LDASolution setLogprior (Double value){
         setObjective(Objetive.LOGPRIOR.id,value);
         return this;
@@ -123,7 +135,7 @@ public class LDASolution implements DoubleSolution {
 
     @Override
     public String toString() {
-        return "[ topics:"+ getTopics()+", alpha:"+getAlpha()+", beta:"+getBeta()+"] -> " + getLoglikelihood() + "/" + getLogPrior() + "/" + getTopicsObj();
+        return "var[topics:"+ getTopics()+", alpha:"+getAlpha()+", beta:"+getBeta()+"] \t obj[logLikelihood(abs):"+getLoglikelihood()+", logPrior(abs):"+getLogPrior()+"]";
     }
 
     public void setNumTopics(Integer num){
@@ -139,7 +151,7 @@ public class LDASolution implements DoubleSolution {
     }
 
     public void setAlpha(Double value){
-        setVariableValue(Variable.ALPHA.id, (value < 1)? 1.5 : value);
+        setVariableValue(Variable.ALPHA.id, (value < 1)? minAlpha : value);
     }
 
     public Double getBeta(){
@@ -147,7 +159,7 @@ public class LDASolution implements DoubleSolution {
     }
 
     public void setBeta(Double value){
-        setVariableValue(Variable.BETA.id, (value < 1) ? 1.5 : value);
+        setVariableValue(Variable.BETA.id, (value < 1) ? minBeta : value);
     }
 
     private Double truncate(Double num){
@@ -256,4 +268,24 @@ public class LDASolution implements DoubleSolution {
         }
     }
 
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        LDASolution that = (LDASolution) o;
+
+        if (maxIterations != null ? !maxIterations.equals(that.maxIterations) : that.maxIterations != null)
+            return false;
+        return !(variables != null ? !variables.equals(that.variables) : that.variables != null);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = maxIterations != null ? maxIterations.hashCode() : 0;
+        result = 31 * result + (variables != null ? variables.hashCode() : 0);
+        return result;
+    }
 }

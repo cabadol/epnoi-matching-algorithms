@@ -4,11 +4,14 @@ import java.nio.charset.Charset
 
 import org.apache.lucene.analysis.standard.StandardAnalyzer
 import org.apache.spark.rdd.RDD
+import org.slf4j.LoggerFactory
 
 /**
  * Created by cbadenes on 21/04/15.
  */
 object CommonTokenizer {
+
+  val log = LoggerFactory.getLogger(CommonTokenizer.getClass);
 
   def split (line: String): Seq[String] = {
     line.toLowerCase.split("\\s").filter(isValid)
@@ -23,8 +26,8 @@ object CommonTokenizer {
   }
 
   def printAll(tokens: RDD[Seq[String]]): RDD[Seq[String]] ={
-    println("*"*20+" Tokenizer.split:")
-    tokens.collect().foreach(x => println(s"·$x"))
+    log.info("*"*20+" Tokenizer.split:")
+    tokens.collect().foreach(x => log.info(s"·$x"))
     return tokens
   }
 

@@ -3,6 +3,7 @@ package es.upm.oeg.epnoi.matching.metrics.topics
 import org.apache.spark.mllib.clustering.{DistributedLDAModel, LDA}
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.rdd.RDD
+import org.slf4j.LoggerFactory
 
 /**
  * Latent Dirichlet Allocation (LDA) algorithm
@@ -10,19 +11,22 @@ import org.apache.spark.rdd.RDD
  */
 class TopicModel (featureVectors: RDD[(Long, Vector)]) extends Serializable {
 
+  val log = LoggerFactory.getLogger(classOf[TopicModel]);
+
   // Create the topic model. (Maximization-Expectation Algorithm)
   val start = System.currentTimeMillis
 
-  println(s"Building a Latent Dirichlet Allocation (LDA) model with parameters: $LDASettings")
+  log.info(s"Building a Latent Dirichlet Allocation (LDA) model with parameters: $LDASettings")
   val ldaModel: DistributedLDAModel = new LDA().
     setK(LDASettings.topics).
-    setMaxIterations(LDASettings.maxIterations).
+    setMaxIterations(LDASettings.maxEvals).
     setDocConcentration(LDASettings.alpha).
     setTopicConcentration(LDASettings.beta).
     run(featureVectors)
 
   val totalTime = System.currentTimeMillis - start
-  println("LDA Execution elapsed time: %1d ms".format(totalTime))
-  println("Log-Likelihood: \t" + ldaModel.logLikelihood)
-  println("Log-Prior: \t" + ldaModel.logPrior)
+  log.info("LDA Execution elapsed time: %1d ms".format(totalTime))
+  log.info("Log-Likelihood: \t" + ldaModel.logLikelihood)
+  log.info("Log-Prior: \t" + ldaModel.logPrior)
+
 }

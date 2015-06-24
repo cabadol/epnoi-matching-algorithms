@@ -17,13 +17,13 @@ class RegularResourceTest  extends FunSuite {
 
     val vocabulary = new Vocabulary(SparkWrapper.sc.parallelize(Seq("uno","dos")))
 
-    val m1: Metadata = Metadata("title1","date1",None)
+    val m1: Metadata = Metadata("title1","date1",Seq.empty)
 
-    val r11 = new RegularResource("uri1","url1",m1,Some(Seq("uno","uno")),None)
+    val r11 = new RegularResource("uri1","url1",m1,Seq("uno","uno"),Seq.empty)
 
-    val r12 = new RegularResource("uri1","url1",m1,Some(Seq("uno","dos")),None)
+    val r12 = new RegularResource("uri1","url1",m1,Seq("uno","dos"),Seq.empty)
 
-    val r1 = new RegularResource("uri1","url1",m1,Some(Seq("uno")),Some(Seq(r11,r12)))
+    val r1 = new RegularResource("uri1","url1",m1,Seq("uno"),Seq(r11,r12))
 
     val result = r1.featureVector(vocabulary);
 

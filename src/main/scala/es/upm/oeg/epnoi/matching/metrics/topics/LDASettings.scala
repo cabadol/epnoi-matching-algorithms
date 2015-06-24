@@ -3,9 +3,12 @@ package es.upm.oeg.epnoi.matching.metrics.topics
 import es.upm.oeg.epnoi.matching.metrics.topics.search.{LDAProblem, NSGAExecutor}
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.rdd.RDD
+import org.slf4j.LoggerFactory
 
 
 object LDASettings {
+
+  val log = LoggerFactory.getLogger(LDASettings.getClass);
 
   var topics: Integer = 4
 
@@ -17,10 +20,26 @@ object LDASettings {
   // Currently must be > 1, where larger values encourage smoother inferred distributions.
   var beta: Double = 1.1
 
-  var maxIterations = 200
+  var maxEvals = 200
+
+  def setTopics(number: Integer): Unit ={
+    topics = number
+  }
+
+  def setAlpha(number: Double): Unit ={
+    alpha = number
+  }
+
+  def setBeta(number: Double): Unit={
+    beta = number
+  }
+
+  def setMaxIterations(number: Integer): Unit ={
+    maxEvals = number
+  }
 
   override def toString : String = {
-    return s"Topics: $topics, Alpha: $alpha, Beta: $beta, MaxIterations: $maxIterations"
+    return s"Topics: $topics, Alpha: $alpha, Beta: $beta, MaxIterations: $maxEvals"
   }
 
   /**
@@ -33,7 +52,8 @@ object LDASettings {
     topics = solution.getTopics
     alpha = solution.getAlpha
     beta = solution.getBeta
-    println(s"LDA parameters adjusted to solution obtained by NSGA algorithm: $toString")
+    maxEvals = ldaIterations
+    log.info(s"LDA parameters adjusted to solution obtained by NSGA algorithm: $toString");
   }
 
 }

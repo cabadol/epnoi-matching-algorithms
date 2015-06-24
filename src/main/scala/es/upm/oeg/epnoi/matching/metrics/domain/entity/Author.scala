@@ -5,8 +5,9 @@ package es.upm.oeg.epnoi.matching.metrics.domain.entity
  * @param uri (uniform resource identifier) string of characters used to identify the metadata
  * @param name
  * @param surname
- * @param digitalId orcid, dblp, ads
  */
-case class Author(uri: String, name: String, surname: String, digitalId: Option[DigitalID]) extends Serializable {
+case class Author(uri: String, name: String, surname: String) extends Serializable {
+
+  var digitalId: DigitalID = null;
 
 }

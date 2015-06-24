@@ -12,10 +12,10 @@ import org.apache.spark.rdd.RDD
 class TopicsSpace (conceptSpace: ConceptsSpace) extends Serializable {
 
   // Topic Model
-//  val model = new TopicModel(conceptSpace.featureVectors)
+  val model = new TopicModel(conceptSpace.featureVectors)
 
   // Conceptual resources with topic distributions
-  val topicalResources: RDD[TopicalResource] = new TopicModel(conceptSpace.featureVectors).ldaModel.topicDistributions.join(conceptSpace.conceptualResourcesMap).map{ case (key,(topics,conceptualResource)) =>
+  val topicalResources: RDD[TopicalResource] = model.ldaModel.topicDistributions.join(conceptSpace.conceptualResourcesMap).map{ case (key,(topics,conceptualResource)) =>
     TopicalResource(conceptualResource, TopicDistribution(topics.toArray))
   }
 
@@ -23,8 +23,8 @@ class TopicsSpace (conceptSpace: ConceptsSpace) extends Serializable {
   // Because SPARK-5063 nested actions in RDD are not allowed
   val authorProfiles : Seq[AuthorProfile] = topicalResources.flatMap{ semanticResource =>
     semanticResource.conceptualResource.resource.metadata.authors match{
-      case None => Seq.empty[AuthorProfile]
-      case Some(a) => a.map(author=>AuthorProfile(author,Map((semanticResource.conceptualResource.resource.metadata,semanticResource.topics))))
+      case Seq() => Seq.empty[AuthorProfile]
+      case a => a.map(author=>AuthorProfile(author,Map((semanticResource.conceptualResource.resource.metadata,semanticResource.topics))))
     }
   }.groupBy(_.author.uri).map{case (uri,listAuthorProfiles) => listAuthorProfiles.reduce(_+_)}.collect
 
@@ -43,7 +43,7 @@ class TopicsSpace (conceptSpace: ConceptsSpace) extends Serializable {
 
     val authorsSimilarity = AuthorsSimilarity(authorsOf(sr1),authorsOf(sr2))
     val contentSimilarity = TopicsSimilarity(sr1.topics,sr2.topics)
-    val alpha = 0.7
+    val alpha = 0.85
 
     alpha*contentSimilarity + (1-alpha)*authorsSimilarity
   }

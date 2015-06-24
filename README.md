@@ -1,2 +1,2 @@
-# epnoi-matching-algorithms
-Epnoi Matching Algorithms
+# epnoi-matching-metrics
+Epnoi Matching Metrics

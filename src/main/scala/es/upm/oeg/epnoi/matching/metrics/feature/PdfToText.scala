@@ -1,15 +1,17 @@
-package es.upm.oeg.epnoi.matching.metrics.utils
+package es.upm.oeg.epnoi.matching.metrics.feature
 
 import java.io._
 
 import org.apache.pdfbox.pdmodel.PDDocument
 import org.apache.pdfbox.util.PDFTextStripper
+import org.slf4j.LoggerFactory
 
 /**
  *
  */
 object PdfToText {
 
+    val log = LoggerFactory.getLogger(PdfToText.getClass);
 
     def toFiles(directory: String) {
 
@@ -21,7 +23,7 @@ object PdfToText {
           val pw = new PrintWriter(new File(path))
           pw.write(content)
           pw.close
-          println(s"$path created!")
+          log.info(s"$path created!")
         }
 
     }

@@ -21,7 +21,12 @@ object ROSimilarityExample {
     val conceptSpace = new ConceptsSpace(conceptualResources)
 
     // OPTIMIZATION: Search best parameters (topics, alpha and beta) for LDA process
-    LDASettings.learn(conceptSpace.featureVectors, maxEvaluations = 400, ldaIterations = 10)
+    LDASettings.learn(conceptSpace.featureVectors, maxEvaluations = 5, ldaIterations = 50)
+
+//    LDASettings.setTopics(4);
+//    LDASettings.setAlpha(13.5);
+//    LDASettings.setBeta(1.1);
+//    LDASettings.setMaxIterations(50);
 
     // Topic Space
     val topicSpace: TopicsSpace = new TopicsSpace(conceptSpace)

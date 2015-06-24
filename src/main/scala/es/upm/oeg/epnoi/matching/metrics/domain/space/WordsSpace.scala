@@ -20,9 +20,9 @@ case class WordsSpace (resources: RDD[RegularResource]) extends Serializable {
 
   // Word-Frequency Vectors using vocabulary as index
   def frequencyVector(r:RegularResource) : Vector={
-    r.words match{
-      case None => Vectors.sparse(vocabulary.size, Seq.empty)
-      case Some(terms) => WordCounter.count(terms, vocabulary)
+    r.bagOfWords match{
+      case Seq() => Vectors.sparse(vocabulary.size, Seq.empty)
+      case terms => WordCounter.count(terms, vocabulary)
     }
   }
 

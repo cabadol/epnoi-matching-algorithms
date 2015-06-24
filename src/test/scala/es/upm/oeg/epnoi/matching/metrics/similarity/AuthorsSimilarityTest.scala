@@ -12,7 +12,7 @@ import org.scalatest.junit.JUnitRunner
 @RunWith(classOf[JUnitRunner])
 class AuthorsSimilarityTest extends FunSuite {
 
-  val metadata = Metadata("title","2012",None)
+  val metadata = Metadata("title","2012",Seq.empty)
 
   test("Same authors") {
 
