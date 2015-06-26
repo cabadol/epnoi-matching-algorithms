@@ -19,7 +19,7 @@ case class ConceptsSpace (conceptualResources: RDD[ConceptualResource]) extends 
   val vocabulary = new Vocabulary(conceptualResources.flatMap(_.bagOfConcepts))
 
   // Indexed list of conceptual resources
-  val conceptualResourcesMap = conceptualResources.zipWithIndex.map{case (value,key) => (key,value)}
+  val conceptualResourcesMap: RDD[(Long, ConceptualResource)] = conceptualResources.zipWithIndex.map{case (value,key) => (key,value)}
 
   // Concept-Frequency vectors indexed
   def featureVectors = conceptualResourcesMap.map{case (key,conceptualResource)=> (key, conceptualResource.featureVector(vocabulary))}

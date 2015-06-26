@@ -13,6 +13,8 @@ class Vocabulary (tokens: RDD[String]) extends Serializable{
   // Map [term] -> [term ,index]
   private val wordsMap: collection.Map[String, Long] = words.zipWithIndex.collectAsMap()
 
+  val wordsByKeyMap: collection.Map[Long,String] = wordsMap.map{case (word,id) => (id,word)}
+
   val size = wordsMap.size
 
 
