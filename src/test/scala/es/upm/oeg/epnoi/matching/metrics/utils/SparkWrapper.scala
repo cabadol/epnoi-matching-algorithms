@@ -1,6 +1,7 @@
 package es.upm.oeg.epnoi.matching.metrics.utils
 
-import org.apache.log4j.{ConsoleAppender, Level, Logger}
+import java.lang.management.{ManagementFactory, RuntimeMXBean}
+
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -9,9 +10,18 @@ import org.apache.spark.{SparkConf, SparkContext}
  */
 object SparkWrapper {
 
-  val conf = new SparkConf().setMaster("local").setAppName("Local Spark Example")
+
+  println("Runtime max memory: " + Runtime.getRuntime.maxMemory())
+  println("Runtime free memory: " + Runtime.getRuntime.freeMemory())
+
+
+  val conf = new SparkConf().
+    setMaster("local").
+    setAppName("Local Spark Example").
+    set("spark.executor.memory", "6g")
 
   val sc = new SparkContext(conf)
+
 
   //Logger.getRootLogger.setLevel(Level.INFO)
 

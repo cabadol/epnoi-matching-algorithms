@@ -42,12 +42,13 @@ class LDAProblem(domain: RDD[(Long, Vector)], iterations: Integer) extends Probl
     if (values.contains(solution)){
       model = values(solution)
     }else{
+      //TODO Spark 1.4.1 return LDAModel instead of DistributedLDAModel
       model = new LDA().
         setK(solution.getTopics).
         setMaxIterations(iterations).
         setDocConcentration(solution.getAlpha).
         setTopicConcentration(solution.getBeta).
-        run(domain)
+        run(domain).asInstanceOf[DistributedLDAModel]
       values(solution) = model
     }
 
