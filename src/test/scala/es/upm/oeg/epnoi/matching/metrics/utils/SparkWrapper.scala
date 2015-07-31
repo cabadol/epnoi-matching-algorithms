@@ -16,9 +16,11 @@ object SparkWrapper {
 
 
   val conf = new SparkConf().
-    setMaster("local").
+    setMaster("local[2]").
     setAppName("Local Spark Example").
-    set("spark.executor.memory", "6g")
+    set("spark.executor.memory", "6g").
+    set("spark.driver.maxResultSize","0")
+
 
   val sc = new SparkContext(conf)
 
