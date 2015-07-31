@@ -27,6 +27,8 @@ object WordVecEnwik9Example {
 //    word2vec.setNumIterations(1)// should be smaller than or equal to number of partitions. (default 1)
 //    word2vec.setNumPartitions(1)// num partitions (default 1)
 
+    println(s"Word2Vec: $word2vec")
+
 
     val model = word2vec.fit(input)
 

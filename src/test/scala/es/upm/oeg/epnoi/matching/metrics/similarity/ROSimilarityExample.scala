@@ -19,7 +19,7 @@ object ROSimilarityExample {
     val start = System.currentTimeMillis
 
     // Conceptual resources
-    val conceptualResources = Articles.corpus.map(ConceptualResource(_))
+//    val conceptualResources = Articles.corpus.map(ConceptualResource(_))
 
     // Concept Space
     val conceptSpace = new ConceptsSpace(conceptualResources)
@@ -39,6 +39,8 @@ object ROSimilarityExample {
     val semanticResources: RDD[TopicalResource] = topicSpace.topicalResources
 
     // Similarity matrix
+
+
 
 //    val matrix = topicSpace.cross(semanticResources)
 
