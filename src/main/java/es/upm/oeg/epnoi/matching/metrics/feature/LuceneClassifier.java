@@ -250,8 +250,8 @@ public class LuceneClassifier {
      * @throws IOException If an I/O error occured.
      */
     public static List<Keyword> guessFromString(String input) throws IOException {
-        return guessFromString(input,EnglishAnalyzer.getDefaultStopSet());
 
+        return guessFromString(input,EnglishAnalyzer.getDefaultStopSet());
     }
 
 }

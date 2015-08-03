@@ -1,6 +1,6 @@
 package es.upm.oeg.epnoi.matching.metrics.topics
 
-import es.upm.oeg.epnoi.matching.metrics.topics.search.{LDAProblem, NSGAExecutor}
+import es.upm.oeg.epnoi.matching.metrics.topics.search.{LDASolution, LDAProblem, NSGAExecutor}
 import org.apache.spark.mllib.linalg.Vector
 import org.apache.spark.rdd.RDD
 import org.slf4j.LoggerFactory
@@ -47,13 +47,14 @@ object LDASettings {
    * @param featureVectors
    * @param maxEvaluations
    */
-  def learn(featureVectors: RDD[(Long, Vector)], maxEvaluations: Integer, ldaIterations: Integer): Unit ={
+  def learn(featureVectors: RDD[(Long, Vector)], maxEvaluations: Integer, ldaIterations: Integer): LDASolution ={
     val solution = NSGAExecutor.search(new LDAProblem(featureVectors, ldaIterations),maxEvaluations)
     topics = solution.getTopics
     alpha = solution.getAlpha
     beta = solution.getBeta
     maxEvals = ldaIterations
     log.info(s"LDA parameters adjusted to solution obtained by NSGA algorithm: $toString");
+    return solution
   }
 
 }
