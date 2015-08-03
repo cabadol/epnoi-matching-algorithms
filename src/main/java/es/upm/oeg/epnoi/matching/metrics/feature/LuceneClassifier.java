@@ -199,16 +199,8 @@ public class LuceneClassifier {
         return guessFromString(content);
     }
 
-    /**
-     * Guesses keywords from given input string.
-     *
-     * @param input The input string.
-     * @return A set of potential keywords. The first keyword is the most frequent one, the last the
-     *         least frequent.
-     * @throws IOException If an I/O error occured.
-     */
-    public static List<Keyword> guessFromString(String input) throws IOException {
 
+    public static List<Keyword> guessFromString(String input, Set<?> stopwords) throws IOException {
         // hack to keep dashed words (e.g. "non-specific" rather than "non" and "specific")
         input = input.replaceAll("-+", "-0");
         // replace any punctuation char but dashes and apostrophes and by a space
@@ -225,7 +217,7 @@ public class LuceneClassifier {
         // convert any char to ASCII
         tokenStream = new ASCIIFoldingFilter(tokenStream);
         // remove english stop words
-        tokenStream = new StopFilter(LUCENE_VERSION, tokenStream, EnglishAnalyzer.getDefaultStopSet());
+        tokenStream = new StopFilter(LUCENE_VERSION, tokenStream, stopwords);
 
         List<Keyword> keywords = new LinkedList<Keyword>();
         CharTermAttribute token = tokenStream.getAttribute(CharTermAttribute.class);
@@ -247,6 +239,19 @@ public class LuceneClassifier {
         Collections.sort(keywords);
 
         return keywords;
+    }
+
+    /**
+     * Guesses keywords from given input string.
+     *
+     * @param input The input string.
+     * @return A set of potential keywords. The first keyword is the most frequent one, the last the
+     *         least frequent.
+     * @throws IOException If an I/O error occured.
+     */
+    public static List<Keyword> guessFromString(String input) throws IOException {
+        return guessFromString(input,EnglishAnalyzer.getDefaultStopSet());
+
     }
 
 }
