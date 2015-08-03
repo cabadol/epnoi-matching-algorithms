@@ -19,7 +19,7 @@ object ROSimilarityExample {
     val start = System.currentTimeMillis
 
     // Conceptual resources
-//    val conceptualResources = Articles.corpus.map(ConceptualResource(_))
+    val conceptualResources = Articles.corpus.map(ConceptualResource(_))
 
     // Concept Space
     val conceptSpace = new ConceptsSpace(conceptualResources)
