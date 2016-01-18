@@ -6,7 +6,7 @@
 
     <groupId>es.upm.oeg.epnoi</groupId>
     <artifactId>epnoi-matching-metrics</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.6</version>
 
     <packaging>jar</packaging>
     <properties>
@@ -26,7 +26,7 @@
         <pdfbox.version>1.8.9</pdfbox.version>
         <scala.version>2.11.2</scala.version>
         <scalatest.version>2.2.4</scalatest.version>
-        <spark.version>1.4.1</spark.version>
+        <spark.version>1.5.0</spark.version>
     </properties>
 
     <build>

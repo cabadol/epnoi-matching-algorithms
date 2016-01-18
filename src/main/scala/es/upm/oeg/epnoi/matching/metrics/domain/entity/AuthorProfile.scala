@@ -8,7 +8,7 @@ package es.upm.oeg.epnoi.matching.metrics.domain.entity
 case class AuthorProfile (author: Author, publications: Map[Metadata,TopicDistribution])  extends Serializable {
 
   def +(authorProfile: AuthorProfile): AuthorProfile ={
-    if (author != authorProfile.author) throw new IllegalArgumentException(s"Authors are different: ${author.uri} and ${authorProfile.author.uri}")
+    if (!author.equals(authorProfile.author)) throw new IllegalArgumentException(s"Authors are different: ${author.uri} and ${authorProfile.author.uri}")
     AuthorProfile(author, publications ++ authorProfile.publications)
   }
 
