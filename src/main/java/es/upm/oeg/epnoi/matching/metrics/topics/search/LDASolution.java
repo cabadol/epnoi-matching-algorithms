@@ -45,7 +45,7 @@ public class LDASolution implements DoubleSolution {
     Integer maxIterations;
     Integer maxTopics;
 
-    public static final Double minTopics = 1.0;
+    public static final Double minTopics = 2.0;
 
     public static final Double maxAlpha = 20.0;
     public static final Double minAlpha = 5.1;
