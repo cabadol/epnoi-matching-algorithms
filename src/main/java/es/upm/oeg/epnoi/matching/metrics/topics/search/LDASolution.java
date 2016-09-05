@@ -139,7 +139,7 @@ public class LDASolution implements DoubleSolution {
     }
 
     public void setNumTopics(Integer num){
-        setVariableValue(Variable.TOPICS.id, (num < 1)? 1 : Double.valueOf(num));
+        setVariableValue(Variable.TOPICS.id, (num < minTopics)? minTopics : Double.valueOf(num));
     }
 
     public Integer getTopics(){
@@ -151,7 +151,7 @@ public class LDASolution implements DoubleSolution {
     }
 
     public void setAlpha(Double value){
-        setVariableValue(Variable.ALPHA.id, (value < 1)? minAlpha : value);
+        setVariableValue(Variable.ALPHA.id, (value < minAlpha)? minAlpha : value);
     }
 
     public Double getBeta(){
@@ -159,7 +159,7 @@ public class LDASolution implements DoubleSolution {
     }
 
     public void setBeta(Double value){
-        setVariableValue(Variable.BETA.id, (value < 1) ? minBeta : value);
+        setVariableValue(Variable.BETA.id, (value < minBeta) ? minBeta : value);
     }
 
     private Double truncate(Double num){

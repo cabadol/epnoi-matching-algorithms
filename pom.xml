@@ -6,7 +6,7 @@
 
     <groupId>es.upm.oeg.epnoi</groupId>
     <artifactId>epnoi-matching-metrics</artifactId>
-    <version>0.0.7</version>
+    <version>0.0.10</version>
 
     <packaging>jar</packaging>
     <properties>
@@ -24,9 +24,9 @@
         <maven.scala.version>2.15.2</maven.scala.version>
         <maven.site.version>0.10</maven.site.version>
         <pdfbox.version>1.8.9</pdfbox.version>
-        <scala.version>2.11.2</scala.version>
+        <scala.version>2.10.6</scala.version><!-- 2.11.2 -->
         <scalatest.version>2.2.4</scalatest.version>
-        <spark.version>1.5.0</spark.version>
+        <spark.version>1.6.1</spark.version><!-- 1.5.0 -->
     </properties>
 
     <build>
@@ -105,20 +105,20 @@
         <!-- Scala Test -->
         <dependency>
             <groupId>org.scalatest</groupId>
-            <artifactId>scalatest_2.11</artifactId>
+            <artifactId>scalatest_2.10</artifactId>
             <version>${scalatest.version}</version>
             <scope>test</scope>
         </dependency>
         <!-- Spark Core -->
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-core_2.11</artifactId>
+            <artifactId>spark-core_2.10</artifactId>
             <version>${spark.version}</version>
         </dependency>
         <!-- Machine Learning Spark Library -->
         <dependency>
             <groupId>org.apache.spark</groupId>
-            <artifactId>spark-mllib_2.11</artifactId>
+            <artifactId>spark-mllib_2.10</artifactId>
             <version>${spark.version}</version>
         </dependency>
         <!-- Apache PDF to Text Converter -->
