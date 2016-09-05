@@ -6,8 +6,8 @@
 
     <groupId>es.upm.oeg.epnoi</groupId>
     <artifactId>epnoi-matching-metrics</artifactId>
-    <version>0.0.10</version>
-
+    <version>0.0.11</version>
+    <name>matching-metrics</name>
     <packaging>jar</packaging>
     <properties>
         <encoding>UTF-8</encoding>
